@@ -25,10 +25,9 @@ const Home = () => {
 
               <h1 className="heading-name">
                 I'M
-                <strong className="main-name"> Siramasetty Vijaya Sai Dinesh</strong>
+                <strong className="main-name"> Dinesh, I turn data into decisions.</strong>
               </h1>
-
-              <div style={{ padding: 50, textAlign: "left" }}>
+              <div style={{ padding: 45, textAlign: "left" }}>
                 <Type />
               </div>
             </Col>

@@ -5,17 +5,17 @@ import {
   Routes,
   Navigate
 } from "react-router-dom";
-
-import Home from './pages/Home'
-import Skill from './pages/Skillset'
-import Project from './pages/Projects'
-import Resume from './pages/Resume'
-import Contact from './pages/Contact'
+import CopyPopup from "./components/copypop/CopyPopup";
+import Home from './pages/Home';
+import Skill from './pages/Skillset';
+import Project from './pages/Projects';
+import Resume from './pages/Resume';
+import Contact from './pages/Contact';
 
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-import Preloader from "./components/PreLoader"
-import ScrollToTop from "./components/ScrollToTop"
+import Preloader from "./components/PreLoader";
+import ScrollToTop from "./components/ScrollToTop";
 
 import "./App.css";
 import "./style.css";
@@ -29,7 +29,35 @@ function App() {
       upadateLoad(false);
     }, 1200);
 
-    return () => clearTimeout(timer);
+    // Disable right-click
+    const disableContext = (e) => e.preventDefault();
+
+    // Block key combinations
+    const disableKeys = (e) => {
+      if (
+        (e.ctrlKey && ['u', 's'].includes(e.key.toLowerCase())) ||
+        (e.ctrlKey && e.shiftKey && ['i', 'j'].includes(e.key.toLowerCase())) ||
+        e.key === 'F12'
+      ) {
+        e.preventDefault();
+      }
+    };
+
+    // Disable copy/cut/paste
+    const disableClipboard = (e) => e.preventDefault();
+
+    document.addEventListener('contextmenu', disableContext);
+    document.addEventListener('keydown', disableKeys);
+    document.addEventListener('cut', disableClipboard);
+    document.addEventListener('paste', disableClipboard);
+
+    return () => {
+      clearTimeout(timer);
+      document.removeEventListener('contextmenu', disableContext);
+      document.removeEventListener('keydown', disableKeys);
+      document.removeEventListener('cut', disableClipboard);
+      document.removeEventListener('paste', disableClipboard);
+    };
   }, []);
 
   return (
@@ -37,6 +65,7 @@ function App() {
       <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
         <Navbar />
+        <CopyPopup />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -44,7 +73,7 @@ function App() {
           <Route path="/project" element={<Project />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Navigate to="/"/>} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />
       </div>

@@ -34,7 +34,7 @@ const Techstack = () => {
       <Col xs={4} md={2} title="Mongo DB" className="tech-icons">
         <SiMongodb />
       </Col>
-      <Col xs={4} md={2} className="tech-icons">
+      <Col xs={4} md={2} title="MySql" className="tech-icons">
         <SiMysql />
       </Col>
       <Col xs={4} md={2} title="Bootstrap" className="tech-icons">

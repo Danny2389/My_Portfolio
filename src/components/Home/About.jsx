@@ -21,10 +21,10 @@ const About = () => {
                 </h1>
                 <p className="home-about-body">
                  Hi, my name is <span className="yellow">Siramasetty Vijaya Sai Dinesh </span>
-                 and I'm from <span className="yellow">Vijayawada Andhra Predesh.</span>
+                 and I'm from <span className="yellow">Vijayawada Andhra Pradesh.</span>
                 <br />
                 <br />
-                I recently graduated with a Bachelor's degree in Electronics And Instrumentaion Engineering in 2023.
+                I recently graduated with a Bachelor's degree in Electronics & Instrumentation Engineering in 2023.
                 <br />
                 <br />
                   As a
@@ -33,7 +33,7 @@ const About = () => {
                   <br />
                   <br />I am proficient in
                     <b className="yellow"> Machine Learning, </b>
-                    as well as have knowledge in programming languages such as C, Javascript, Python, Node.js,
+                    and have knowledge in programming languages such as C, Javascript, Python, Node.js, along with experience in
                   <b className="yellow"> NLP, and Flask.</b>
                   <br />
                   <br />
@@ -47,14 +47,14 @@ const About = () => {
                   </i>
                   &nbsp; like
                   <i>
-                    <b className="yellow"> Flask,Spark & Selenium</b>
+                    <b className="yellow"> Flask, Spark, and Selenium</b>
                   </i>
                   <br />
                   <br />
-                  I am also interested in building new
+                  I am also interested in building innovative
                   <i>
-                    <b className="yellow"> Web Technologies and ML Predictions, </b>
-                    as well as exploring areas related to
+                    <b className="yellow"> Web Technologies, creating ML Predictions models, </b>
+                    and exploring various domains within
                     <b className="yellow"> Artificial Intelligence.</b>
                   </i>
                   <br />

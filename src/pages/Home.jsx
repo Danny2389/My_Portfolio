@@ -27,7 +27,7 @@ const Home = () => {
                 I'M
                 <strong className="main-name"> Dinesh, I turn data into decisions.</strong>
               </h1>
-              <div style={{ padding: 45, textAlign: "left" }}>
+              <div style={{ padding: 50, textAlign: "left" }}>
                 <Type />
               </div>
             </Col>

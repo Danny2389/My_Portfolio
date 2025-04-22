@@ -30,7 +30,7 @@ const Projects = () => {
               Designed a revolutionary healthcare solution that enhances patient care and accessibility.
               Leveraged React.js, Machine Learning, Neural Networks, AI Chatbot, and MySQL to develop an intelligent, responsive system.
               Enhanced patient care through a user-friendly mobile application, reducing delays and ensuring seamless healthcare access.
-              With intuitive mobile consultations and the message “CARE IS ON THE“. "
+              With intuitive mobile consultations and the message “CARE IS ON THE WAY”. "
               ghLink="https://github.com/Danny2389/Health_Care_App.git"
             />
           </Col>

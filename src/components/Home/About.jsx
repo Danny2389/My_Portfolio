@@ -9,7 +9,6 @@ import {
 import { FaLinkedinIn } from "react-icons/fa";
 
 
-
 const About = () => {
     return (
         <Container fluid className="home-about-section" id="about">
@@ -21,7 +20,7 @@ const About = () => {
                 </h1>
                 <p className="home-about-body">
                  Hi, my name is <span className="yellow">Siramasetty Vijaya Sai Dinesh </span>
-                 and I'm from <span className="yellow">Vijayawada Andhra Pradesh.</span>
+                 and I'm from <span className="yellow">Vijayawada, Andhra Pradesh.</span>
                 <br />
                 <br />
                 I recently graduated with a Bachelor's degree in Electronics & Instrumentation Engineering in 2023.
@@ -38,7 +37,7 @@ const About = () => {
                   <br />
                   <br />
                   I have a passion for working
-                  with <b className="yellow">Machine Learning, Deep Learning,</b> and
+                  with <b className="yellow">Machine Learning, Deep Learning</b> and
                   <i>
                     <b className="yellow">
                       {" "}
@@ -53,7 +52,7 @@ const About = () => {
                   <br />
                   I am also interested in building innovative
                   <i>
-                    <b className="yellow"> Web Technologies, creating ML Predictions models, </b>
+                    <b className="yellow"> Web Technologies, creating ML Predictions models</b>
                     and exploring various domains within
                     <b className="yellow"> Artificial Intelligence.</b>
                   </i>

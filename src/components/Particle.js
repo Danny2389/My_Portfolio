@@ -5,7 +5,20 @@ function Particle() {
   return (
     <Particles
       id="tsparticles"
-      params={{
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        zIndex: 0,
+      }}
+      options={{
+        background: {
+          color: {
+            value: "#000000", // dark starry space background
+          },
+        },
         particles: {
           number: {
             value: 160,

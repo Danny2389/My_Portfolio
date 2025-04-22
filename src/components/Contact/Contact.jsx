@@ -60,9 +60,9 @@ const Contact = () => {
   };
 
   return (
-    <Container style={{ paddingTop: "50px" }}>
+    <Container className="section-heading" style={{ paddingTop: "50px" }}>
       <Row>
-        <Col md={6} className="c-left">
+        <Col md={6} className="contact-heading">
           <h1>Get in Touch</h1>
           <h1 className="yellow">Contact me</h1>
         </Col>
@@ -80,14 +80,14 @@ const Contact = () => {
               type="text"
               name="contact_info"
               className="user c-left"
-              placeholder="Contact"
+              placeholder="Contact Number"
               value={formData.contact_info}
               onChange={handleChange}
             />
             <input
               type="text"
               name="from_name"
-              className="user"
+              className="user c-left"
               placeholder="Your Name"
               value={formData.from_name}
               onChange={handleChange}
@@ -95,15 +95,15 @@ const Contact = () => {
             <input
               type="email"
               name="reply_to"
-              className="user"
+              className="user c-left"
               placeholder="Your Email"
               value={formData.reply_to}
               onChange={handleChange}
             />
             <textarea
               name="message"
-              className="user"
-              placeholder="Your Message"
+              className="user c-left"
+              placeholder="Message Here"
               value={formData.message}
               onChange={handleChange}
             />

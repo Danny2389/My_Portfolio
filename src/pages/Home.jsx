@@ -1,15 +1,18 @@
-import React from 'react'
+import React from 'react';
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from '../assets/about.png'
+import homeLogo from '../assets/about.png';
 import Particle from '../components/Particle';
 import About from '../components/Home/About';
 import Type from '../components/Home/Type';
 
 const Home = () => {
   return (
-    <section>
-      <Container fluid className="home-section" id="home">
-        <Particle />
+    <section style={{ position: "relative", overflow: "hidden" }}>
+      {/* Background Particle Effect */}
+      <Particle />
+
+      {/* Foreground Content */}
+      <Container fluid className="home-section" id="home" style={{ position: "relative", zIndex: 1 }}>
         <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">
@@ -41,9 +44,11 @@ const Home = () => {
           </Row>
         </Container>
       </Container>
+
+      {/* Additional Section */}
       <About />
     </section>
   );
 }
 
-export default Home
+export default Home;

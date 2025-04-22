@@ -13,10 +13,10 @@ const Projects = () => {
     <Container fluid className="project-section">
       <Particle />
       <Container>
-        <h1 className="project-heading">
-          Recent Top <strong className="yellow">Works </strong>
+        <h1 className="section-heading">
+          Recent Top |<strong className="yellow"> Works </strong>
         </h1>
-        <p style={{ color: "white" }}>
+        <p className="section-heading" style={{fontSize:"18px"}}>
           Here are a few projects I've worked on recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>

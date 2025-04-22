@@ -37,9 +37,9 @@ function NavBar() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-        <Navbar.Brand href="/" className="d-flex">
+        {/* <Navbar.Brand href="/" className="d-flex">
           <p>Siramasetty Vijaya Sai Dinesh</p>
-        </Navbar.Brand>
+        </Navbar.Brand> */}
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => {
@@ -51,12 +51,12 @@ function NavBar() {
           <span></span>
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto" defaultActiveKey="#home">
-            <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
-              </Nav.Link>
-            </Nav.Item>
+          <Nav style={{ justifyContent: 'center', width: '100%' }} defaultActiveKey="#home">
+          <Nav.Item>
+            <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
+              <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
+            </Nav.Link>
+          </Nav.Item>
 
             <Nav.Item>
               <Nav.Link
@@ -103,7 +103,7 @@ function NavBar() {
 
             {/* <Nav.Item className="fork-btn">
               <Button
-                href="https://github.com/19sajib/portfolio"
+                href="https://github.com/Danny2389/portfolio"
                 target="_blank"
                 className="fork-btn-inner"
               >

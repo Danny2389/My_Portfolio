@@ -7,6 +7,18 @@
   padding-top: 3rem;
 }
 
+.contact-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* vertical center */
+    align-items: flex-start;   /* left align */
+    height: 50vh;             /* full viewport height */
+    padding-left: 50px;        /* add spacing from left edge */
+    color: white;
+    z-index: 2;
+  }
+  
+
 .c-left{
     text-align: center !important;
     padding-top: 25px;

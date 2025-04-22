@@ -60,7 +60,7 @@ html {
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #2d005c;
+    background: #000000;
   }
   
   /* Handle */
@@ -260,7 +260,7 @@ html {
   .home-section {
     position: relative;
     z-index: -1;
-    background-image: var(--image-gradient), url(./assets/home-bg.jpg);
+    /* background-image: var(--image-gradient), url(./assets/home-bg.jpg); */
     background-position: top center;
     background-repeat: no-repeat;
     padding-bottom: 30px !important;
@@ -407,8 +407,10 @@ html {
   /* Footer */
   /* --------- */
   .footer {
-    background-color: rgb(1, 6, 36);
     bottom: 0 !important;
+    position: relative;
+    text-align: center;
+    color: white;
     padding-top: 10px !important;
     padding-bottom: 8px !important ;
   }
@@ -466,6 +468,14 @@ html {
     color: white !important;
   }
   
+  .section-heading {
+    font-size: 2.3em;
+    text-align: center;
+    color: white;
+    z-index: 999;
+    position: relative;
+  }
+
   .tech-icons {
     font-size: 4.5em !important;
     margin: 15px !important;
@@ -614,8 +624,9 @@ html {
   box-shadow: none !important;
 }
 .project-heading {
+  position: "relative";
   color: white !important;
-  font-size: 2.3em !important;
+  font-size: 2.6em !important;
   font-weight: 500 !important;
   padding-top: 10px !important;
 }

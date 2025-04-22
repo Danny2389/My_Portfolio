@@ -11,13 +11,13 @@ const Skillset = () => {
     <Container fluid className="about-section">
       <Particle />
       <Container>
-        <h1 className="project-heading">
-          Professional <strong className="yellow">Skillset </strong>
-        </h1>
+      <h1 className="section-heading">
+  Professional | <strong className="yellow">Skillset</strong>
+</h1>
 
         <Techstack />
 
-        <h1 className="project-heading">
+        <h1 className="section-heading">
           <strong className="yellow">Tools</strong> I use
         </h1>
         <Toolstack />

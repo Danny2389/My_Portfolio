@@ -1,8 +1,8 @@
-// Contact.jsx
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Container, Row, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import { motion } from "framer-motion"; // Importing framer-motion
 import "./Contact.css";
 
 const Contact = () => {
@@ -63,63 +63,106 @@ const Contact = () => {
     <Container className="section-heading" style={{ paddingTop: "50px" }}>
       <Row>
         <Col md={6} className="c-left">
-          <h1>Get in Touch</h1>
-          <h1 className="yellow">Contact me</h1>
+          <motion.h1
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            Get in Touch
+          </motion.h1>
+          <motion.h1
+            className="yellow"
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
+            Contact me
+          </motion.h1>
         </Col>
         <Col md={6} className="c-right">
           <form ref={form} onSubmit={sendEmail}>
-          <input
+            <motion.input
               type="text"
               name="company_name"
               className="user c-left"
-              placeholder="Comapany Name"
+              placeholder="Company Name"
               value={formData.company_name}
               onChange={handleChange}
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
             />
-            <input
+            <motion.input
               type="text"
               name="contact_info"
               className="user c-left"
               placeholder="Contact Number"
               value={formData.contact_info}
               onChange={handleChange}
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
             />
-            <input
+            <motion.input
               type="text"
               name="from_name"
               className="user c-left"
               placeholder="Your Name"
               value={formData.from_name}
               onChange={handleChange}
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.7, duration: 0.5 }}
             />
-            <input
+            <motion.input
               type="email"
               name="reply_to"
               className="user c-left"
               placeholder="Your Email"
               value={formData.reply_to}
               onChange={handleChange}
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.8, duration: 0.5 }}
             />
-            <textarea
+            <motion.textarea
               name="message"
               className="user c-left"
               placeholder="Message Here"
               value={formData.message}
               onChange={handleChange}
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.9, duration: 0.5 }}
             />
             {formStatus.error && (
-              <span className="not-done">
+              <motion.span
+                className="not-done"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1, duration: 0.3 }}
+              >
                 ❌ Please fill in all the fields correctly.
-              </span>
+              </motion.span>
             )}
             {formStatus.success && (
-              <span className="done">
+              <motion.span
+                className="done"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1, duration: 0.3 }}
+              >
                 ✅ Message sent successfully! I will get back to you soon.
-              </span>
+              </motion.span>
             )}
-            <Button type="submit" className="button">
-              Send
-            </Button>
+            <motion.span
+                className="not-done"
+                initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 1.1, duration: 0.5 }}
+              >
+            <Button type="submit" className="button"
+            > Send </Button></motion.span>
           </form>
         </Col>
       </Row>

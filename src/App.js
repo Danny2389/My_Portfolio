@@ -22,28 +22,26 @@ import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  const [load, upadateLoad] = useState(true);
+  const [load, updateLoad] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      upadateLoad(false);
+      updateLoad(false);
     }, 1200);
 
-    // Disable right-click
     const disableContext = (e) => e.preventDefault();
 
-    // Block key combinations
     const disableKeys = (e) => {
+      const key = e.key.toLowerCase();
       if (
-        (e.ctrlKey && ['u', 's'].includes(e.key.toLowerCase())) ||
-        (e.ctrlKey && e.shiftKey && ['i', 'j'].includes(e.key.toLowerCase())) ||
-        e.key === 'F12'
+        (e.ctrlKey && ['u', 's'].includes(key)) ||
+        (e.ctrlKey && e.shiftKey && ['i', 'j'].includes(key)) ||
+        key === ''
       ) {
         e.preventDefault();
       }
     };
 
-    // Disable copy/cut/paste
     const disableClipboard = (e) => e.preventDefault();
 
     document.addEventListener('contextmenu', disableContext);
@@ -73,7 +71,7 @@ function App() {
           <Route path="/project" element={<Project />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <Footer />
       </div>

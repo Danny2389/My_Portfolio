@@ -50,6 +50,48 @@ html {
     height: 100vh;
   }
   
+/* Bounce effect */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Rotate effect */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Fade In effect */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Apply animation to each icon */
+.tech-icons img, .tech-icons svg {
+  animation: fadeIn 2s ease-in-out; /* Start with a fade-in effect */
+}
+
+/* Bounce effect when hovering over icons */
+.tech-icons:hover img, .tech-icons:hover svg{
+  animation: bounce 0.5s ease-in-out infinite; /* Infinite bounce on hover */
+  filter: brightness(120%) contrast(110%);
+}
+
+
   /* --------- */
   /*Scrollbar   */
   /* --------- */
@@ -354,6 +396,21 @@ html {
     position: relative !important;
     padding-inline-start: 0 !important;
   }
+  
+  .home-footer-social1 {
+    text-align: center !important;
+    padding-top: 25px;
+    color: white !important;
+  }
+  
+  .home-footer-social-links1 {
+    justify-content: center !important;
+    padding-top: 15px !important;
+    display: inline-block !important;
+    position: relative !important;
+    padding-inline-start: 0 !important;
+  }
+
   
   .home-social-icons {
     position: relative !important;

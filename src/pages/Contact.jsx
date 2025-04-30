@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
-    <Container style={{padding: '60px'}}>
+    <Container>
       <Particle />
       <ContactForm />
       <Social />
@@ -19,7 +19,6 @@ const Contact = () => {
         transition={{ duration: 1 }}
         viewport={{ once: false, amount: 0.3 }} // amount is how much should be visible before triggering
       >
-
         <Footersocial />
       </motion.div>
     </Container>

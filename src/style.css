@@ -369,6 +369,13 @@ html {
     padding-top: 70px !important;
     /* background-image: var(--image-gradient), url('./assets/home-bg.jpg'); */
   }
+
+  .home-Footersocial-section {
+    position: relative;
+    padding-bottom: 70px !important;
+    padding-top: 70px !important;
+    /* background-image: var(--image-gradient), url('./assets/home-bg.jpg'); */
+  }
   
   .home-about-description {
     color: white !important;
@@ -396,21 +403,20 @@ html {
     position: relative !important;
     padding-inline-start: 0 !important;
   }
-  
-  .home-footer-social1 {
+
+  .home-Footersocial-social {
     text-align: center !important;
     padding-top: 25px;
     color: white !important;
   }
   
-  .home-footer-social-links1 {
+  .home-Footersocial-social-links {
     justify-content: center !important;
     padding-top: 15px !important;
     display: inline-block !important;
     position: relative !important;
     padding-inline-start: 0 !important;
   }
-
   
   .home-social-icons {
     position: relative !important;

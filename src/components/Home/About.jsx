@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import LaptopImg from "../../assets/home-main.svg";
 import Tilt from "react-parallax-tilt";
-import { motion } from "framer-motion"; // <-- ✅ Add this line
+import { motion } from "framer-motion"; 
 import {
   AiFillGithub,
   AiTwotoneMail 

@@ -20,6 +20,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import "./App.css";
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+// import Footersocial from "./components/Footer/Footersocial";
 
 function App() {
   const [load, updateLoad] = useState(true);

@@ -68,7 +68,7 @@ const Projects = () => {
       imgPath: pg,
       title: "Bike Rental with Machine Learning",
       description: "A Bike Rental is an intelligent platform that leverages machine learning models to predict bike demand, optimize rental pricing, and enhance user experience. The system can analyze historical data, including weather conditions, location, time of day, and user preferences, to make data-driven predictions about bike availability and demand trends.",
-      ghLink: ""
+      ghLink: "https://github.com/Danny2389/BikeRentalPrediction.git"
     }
   ];
 

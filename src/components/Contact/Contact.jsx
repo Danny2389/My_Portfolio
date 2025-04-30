@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Container, Row, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import contact from "../../assets/contact.png";
+import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion"; // Importing framer-motion
 import "./Contact.css";
 
@@ -60,7 +62,7 @@ const Contact = () => {
   };
 
   return (
-    <Container className="section-heading" style={{ paddingTop: "50px" }}>
+    <Container className="section-heading" style={{ paddingTop: "100px" }}>
       <Row>
         <Col md={6} className="c-left">
           <motion.h1
@@ -76,7 +78,7 @@ const Contact = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            Contact me
+            Contact me <Tilt><img src={contact} className="img-fluid" alt="avatar" style={{ width: "450px", height: "auto" }}/></Tilt>
           </motion.h1>
         </Col>
         <Col md={6} className="c-right">

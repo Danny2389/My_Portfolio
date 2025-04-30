@@ -310,7 +310,7 @@ html {
   }
   
   .home-content {
-    padding: 9rem 0 2rem !important;
+    padding: 5rem 0 2rem !important;
     color: whitesmoke;
     text-align: left;
   }
@@ -365,15 +365,13 @@ html {
   
   .home-about-section {
     position: relative;
-    padding-bottom: 70px !important;
-    padding-top: 70px !important;
+    padding-bottom: 50px !important;
+    padding-top: 50px !important;
     /* background-image: var(--image-gradient), url('./assets/home-bg.jpg'); */
   }
 
   .home-Footersocial-section {
     position: relative;
-    padding-bottom: 70px !important;
-    padding-top: 70px !important;
     /* background-image: var(--image-gradient), url('./assets/home-bg.jpg'); */
   }
   
@@ -406,7 +404,6 @@ html {
 
   .home-Footersocial-social {
     text-align: center !important;
-    padding-top: 25px;
     color: white !important;
   }
   

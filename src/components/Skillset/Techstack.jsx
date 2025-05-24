@@ -17,10 +17,10 @@ const Techstack = () => {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       <Col xs={4} md={2} title="Html5/css" className="tech-icons hover-icon">
-        <SiHtml5 />
+        <SiHtml5 /><span style={{ fontSize: '20px', display: 'block' }}>HTML5</span>
       </Col>
       <Col xs={4} md={2} title="JavaScript" className="tech-icons hover-icon">
-        <DiJavascript1 />
+        <DiJavascript1 /><span style={{ fontSize: '20px', display: 'block' }}>JavaScript</span>
       </Col>
       <Col xs={4} md={2} className="tech-icons hover-icon">
         <img
@@ -29,34 +29,41 @@ const Techstack = () => {
           alt="Tool Icon"
           style={{ width: "120px", height: "110px", filter: "invert(100%) brightness(200%)" }}
           className="img-fluid"
-        />
+        /><span style={{ fontSize: '20px', display: 'block' }}>AWS</span>
       </Col>
       <Col xs={4} md={2} title="React.js" className="tech-icons hover-icon">
         <DiReact />
+        <span style={{ fontSize: '20px', display: 'block' }}>React js</span>
       </Col>
       <Col xs={4} md={2} title="Python" className="tech-icons hover-icon">
         <DiPython />
+        <span style={{ fontSize: '20px', display: 'block' }}>Python</span>
       </Col>
       <Col xs={4} md={2} title="Mongo DB" className="tech-icons hover-icon">
         <SiMongodb />
+        <span style={{ fontSize: '20px', display: 'block' }}>Mongo DB</span>
       </Col>
       <Col xs={4} md={2} title="MySql" className="tech-icons hover-icon">
         <SiMysql />
+        <span style={{ fontSize: '20px', display: 'block' }}>MySql</span>
       </Col>
-      <Col xs={4} md={2} title="Bootstrap" className="tech-icons hover-icon">
+      <Col xs={4} md={2} className="tech-icons hover-icon" style={{ margin: '50px' }}>
         <SiBootstrap />
+        <span style={{ fontSize: '20px', display: 'block' }}>Bootstrap</span>
       </Col>
       <Col xs={4} md={2} className="tech-icons hover-icon">
         <img
-          src={require("../../assets/skills/neural-network.png")}
-          title="Neural Network"
+          src={require("../../assets/skills/Selenium.png")}
+          title="Selenium"
           alt="Tool Icon"
-          style={{ width: "90px", height: "90px" }}
+          style={{ width: "80px", height: "80px" }}
           className="img-fluid"
         />
+        <span style={{ fontSize: '20px', display: 'block', color : 'red'}}>Selenium</span>
       </Col>
       <Col xs={4} md={2} title="GitHub" className="tech-icons hover-icon">
         <DiGit />
+        <span style={{ fontSize: '20px', display: 'block' }}>GitHub</span>
       </Col>
       <Col xs={4} md={2} className="tech-icons hover-icon">
         <img
@@ -74,15 +81,17 @@ const Techstack = () => {
           alt="Tool Icon"
           style={{ width: "100px", height: "100px" }}
           className="img-fluid"
-        />
+        /><span style={{ fontSize: '20px', display: 'block' }}><span style={{ color: 'rgb(137 200 114)' }}>D</span>
+          <span style={{ color: 'rgb(216 125 203)' }}>L</span></span>
       </Col>
       <Col xs={4} md={2} className="tech-icons hover-icon">
         <img
           src={require("../../assets/skills/sql-server.png")}
+          title="SQL"
           alt="Tool Icon"
           style={{ width: "90px", height: "90px" }}
           className="img-fluid"
-        />
+        /><span style={{ fontSize: '20px', display: 'block', color : '#505ca3' }}>SQL</span>
       </Col>
       <Col xs={4} md={2} className="tech-icons hover-icon">
         <img
@@ -91,7 +100,8 @@ const Techstack = () => {
           alt="Tool Icon"
           style={{ width: "90px", height: "90px" }}
           className="img-fluid"
-        />
+        /><span style={{ fontSize: '20px', display: 'block' }}><span style={{ color: '#5ecdac' }}>M</span>
+          <span style={{ color: '#ed4d5d' }}>L</span></span>
       </Col>
       <Col xs={4} md={2} className="tech-icons hover-icon">
         <img
@@ -100,7 +110,7 @@ const Techstack = () => {
           alt="Tool Icon"
           style={{ width: "90px", height: "90px" }}
           className="img-fluid"
-        />
+        /><span style={{ fontSize: '20px', display: 'block', color: '#5a97e7' }}>NLP</span>
       </Col>
     </Row>
   );

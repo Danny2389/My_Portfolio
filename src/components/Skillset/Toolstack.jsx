@@ -18,7 +18,7 @@ const Toolstack = () => {
       </Col>
       <Col xs={4} md={2} className="tech-icons">
       <img src={require("../../assets/skills/react-bootstrap.png")} title="React+Bootstrap" alt="Tool Icon" style={{ width: "90px", height: "90px" }} className="img-fluid"/>
-      <span style={{ fontSize: '5px', display: 'block', color: '#3bd1ed'}}>React|Bootstrap</span>
+      <span style={{ fontSize: '25px', display: 'block', color: '#3bd1ed'}}>React|Bootstrap</span>
       </Col>
       <Col xs={4} md={2} title="Netlify" className="tech-icons">
         <SiNetlify /><span style={{ fontSize: '20px', display: 'block' }}>Netlify</span>

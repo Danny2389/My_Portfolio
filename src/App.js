@@ -38,7 +38,7 @@ function App() {
       if (
         (e.ctrlKey && ['u', 's'].includes(key)) ||
         (e.ctrlKey && e.shiftKey && ['i', 'j'].includes(key)) ||
-        key === ''
+        key === 'f12'
       ) {
         e.preventDefault();
       }

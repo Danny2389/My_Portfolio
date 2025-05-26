@@ -14,13 +14,19 @@ const NeuralNetworkCanvas = () => {
   const tooltipRef = useRef();
   const [tooltip, setTooltip] = useState({ visible: false, text: "", x: 0, y: 0 });
   const [hoveredNeuron, setHoveredNeuron] = useState(null);
+  const hoveredNeuronRef = useRef(null); // NEW
+
+  // Sync hoveredNeuron to ref
+  useEffect(() => {
+    hoveredNeuronRef.current = hoveredNeuron;
+  }, [hoveredNeuron]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
     const width = canvas.width;
     const height = canvas.height;
-    const radius = 22;
+    const radius = 23;
 
     const layerSpacing = width / (layers.length + 1);
 
@@ -50,20 +56,16 @@ const NeuralNetworkCanvas = () => {
             ctx.lineTo(toNeuron.x, toNeuron.y);
 
             const isHoveredConnection =
-              hoveredNeuron &&
-              ((hoveredNeuron.layer === i && hoveredNeuron.index === fromIndex) ||
-               (hoveredNeuron.layer === i + 1 && hoveredNeuron.index === toIndex));
+              hoveredNeuronRef.current &&
+              ((hoveredNeuronRef.current.layer === i && hoveredNeuronRef.current.index === fromIndex) ||
+               (hoveredNeuronRef.current.layer === i + 1 && hoveredNeuronRef.current.index === toIndex));
 
             ctx.strokeStyle = isHoveredConnection
               ? "rgba(255, 255, 255, 0.9)" 
               : "rgba(255, 255, 255, 0.2)";
             ctx.lineWidth = isHoveredConnection ? 3 : 1;
-            if (isHoveredConnection) {
-              ctx.shadowColor = "#fff";
-              ctx.shadowBlur = 10;
-            } else {
-              ctx.shadowBlur = 0;
-            }
+            ctx.shadowColor = isHoveredConnection ? "#fff" : "transparent";
+            ctx.shadowBlur = isHoveredConnection ? 10 : 0;
 
             ctx.stroke();
           });
@@ -79,23 +81,22 @@ const NeuralNetworkCanvas = () => {
           neuron.activation = pulse;
 
           const isHovered =
-            hoveredNeuron &&
-            hoveredNeuron.layer === layerIndex &&
-            hoveredNeuron.index === neuronIndex;
+            hoveredNeuronRef.current &&
+            hoveredNeuronRef.current.layer === layerIndex &&
+            hoveredNeuronRef.current.index === neuronIndex;
 
           ctx.fillStyle = isHovered ? "#fff" : getColor(pulse, layerIndex);
           ctx.fill();
           ctx.strokeStyle = "#222";
           ctx.lineWidth = 2.5;
           ctx.stroke();
-          ctx.fill();
+
           // Draw neuron label: LxNy
-          ctx.fillStyle = "#000"; // text color
+          ctx.fillStyle = "#000";
           ctx.font = "15px Arial";
           ctx.textAlign = "center";
           ctx.textBaseline = "middle";
           ctx.fillText(`L${layerIndex + 1}N${neuronIndex + 1}`, neuron.x, neuron.y);
-
         });
 
         // Draw layer labels

@@ -27,7 +27,15 @@ const Footer = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.5 }}
           >
-            Copyright © {year}
+             <center>
+              <span className="block text-sm pb-4 text-gray-500 text-center dark:text-gray-400">
+                © {year}{" "}
+                <span>
+                Dinesh™
+                </span>
+                  <> </>| All Rights Reserved.
+              </span>
+            </center>
           </motion.span>
         </Col>
 

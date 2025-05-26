@@ -13,6 +13,8 @@ import {
 } from "react-icons/ai";
 import { GiSkills } from "react-icons/gi"
 import { CgFileDocument } from "react-icons/cg";
+import { PiCertificate } from "react-icons/pi";
+
 
 
 function NavBar() {
@@ -52,12 +54,13 @@ function NavBar() {
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav style={{ justifyContent: 'center', width: '100%' }} defaultActiveKey="#home">
+          
           <Nav.Item>
             <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
               <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
             </Nav.Link>
           </Nav.Item>
-
+    
             <Nav.Item>
               <Nav.Link
                 as={Link}
@@ -92,6 +95,16 @@ function NavBar() {
             </Nav.Item>
 
             <Nav.Item>
+                <Nav.Link
+                  as={Link}
+                  to="/certificates"
+                  onClick={() => updateExpanded(false)}
+                >
+                  <PiCertificate style={{ marginBottom: "2px" }} /> Certificates
+                </Nav.Link>
+              </Nav.Item>
+
+            <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/contact"
@@ -103,7 +116,7 @@ function NavBar() {
 
             {/* <Nav.Item className="fork-btn">
               <Button
-                href="https://github.com/Danny2389/portfolio"
+                href="https://github.com/Danny2389/My_Portfolio"
                 target="_blank"
                 className="fork-btn-inner"
               >

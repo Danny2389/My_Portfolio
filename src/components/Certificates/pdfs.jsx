@@ -1,0 +1,94 @@
+import React, { useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import { Document, Page, pdfjs } from "react-pdf";
+import { motion } from "framer-motion";
+import cert1 from "../../assets/certificates/Data_Science_Foundation.pdf";
+import cert2 from "../../assets/certificates/Rubixe.pdf";
+import cert3 from "../../assets/certificates/SytiqHub.pdf";
+import cert4 from "../../assets/certificates/ICONAT.pdf";
+
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
+const certificates = [
+  { file: cert1, title: "Data Science Foundation", pages: 1 },
+  { file: cert2, title: "Rubixe Internship", pages: 1 },
+  { file: cert3, title: "SytiqHub Internship", pages: 1 },
+  { file: cert4, title: "ICONAT_2023 Publication", pages: 4 },
+];
+
+const Pdfs = () => {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  return (
+    <Container className="pt-5 text-center">
+      
+      <Row className="justify-content-center">
+        {certificates.map((cert, index) => (
+          <Col md={4} sm={6} xs={12} key={index} className="mb-4">
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              className="certificate-box"
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              style={{
+                height: "250px",
+                borderRadius: "10px",
+                boxShadow: "rgb(96 0 206 / 50%) -6px 3px 10px",
+                padding: "10px",
+                overflow: "hidden",
+                position: "relative",
+                transition: "all 0.3s ease-in-out",
+                cursor: "pointer",
+              }}
+            >
+              {hoveredIndex === index ? (
+                <a
+                  href={cert.file}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <div
+                    style={{
+                      height: "100%",
+                      overflowY: "auto",
+                      borderRadius: "5px",
+                      background: "#000000",
+                    }}
+                  >
+                    <Document file={cert.file}>
+                      {Array.from(new Array(cert.pages), (el, pageIndex) => (
+                        <Page
+                          key={`page_${pageIndex + 1}`}
+                          pageNumber={pageIndex + 1}
+                          scale={0.6}
+                        />
+                      ))}
+                    </Document>
+                  </div>
+                </a>
+              ) : (
+                <div
+                  style={{
+                    height: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    fontWeight: "bold",
+                    fontSize: "20px",
+                    color: "rgb(96 0 206)",
+                  }}
+                >
+                  {cert.title}
+                </div>
+              )}
+            </motion.div>
+          </Col>
+        ))}
+      </Row>
+    </Container>
+  );
+};
+
+export default Pdfs;

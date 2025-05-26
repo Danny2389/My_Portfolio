@@ -45,7 +45,7 @@ const Techstack = () => {
       </Col>
       <Col xs={4} md={2} title="MySql" className="tech-icons hover-icon">
         <SiMysql />
-        <span style={{ fontSize: '20px', display: 'block' }}>MySql</span>
+        <span style={{ fontSize: '20px', display: 'block', color:'black' }}>MySQL</span>
       </Col>
       <Col xs={4} md={2} className="tech-icons hover-icon" style={{ margin: '50px' }}>
         <SiBootstrap />
@@ -59,7 +59,7 @@ const Techstack = () => {
           style={{ width: "80px", height: "80px" }}
           className="img-fluid"
         />
-        <span style={{ fontSize: '20px', display: 'block', color : 'red'}}>Selenium</span>
+        <span style={{ fontSize: '20px', display: 'block', color : '#c00929'}}>Selenium</span>
       </Col>
       <Col xs={4} md={2} title="GitHub" className="tech-icons hover-icon">
         <DiGit />
@@ -91,7 +91,7 @@ const Techstack = () => {
           alt="Tool Icon"
           style={{ width: "90px", height: "90px" }}
           className="img-fluid"
-        /><span style={{ fontSize: '20px', display: 'block', color : '#505ca3' }}>SQL</span>
+        /><span style={{ fontSize: '20px', display: 'block', color: 'rgb(158 185 186)' }}>SQL</span>
       </Col>
       <Col xs={4} md={2} className="tech-icons hover-icon">
         <img
@@ -100,8 +100,10 @@ const Techstack = () => {
           alt="Tool Icon"
           style={{ width: "90px", height: "90px" }}
           className="img-fluid"
-        /><span style={{ fontSize: '20px', display: 'block' }}><span style={{ color: '#5ecdac' }}>M</span>
-          <span style={{ color: '#ed4d5d' }}>L</span></span>
+        /><span style={{ fontSize: '20px', display: 'block' }}>
+          <span style={{ color: '#5ecdac' }}>M</span>
+          <span style={{ color: '#ed4d5d' }}>L</span>
+          </span>
       </Col>
       <Col xs={4} md={2} className="tech-icons hover-icon">
         <img
@@ -110,7 +112,11 @@ const Techstack = () => {
           alt="Tool Icon"
           style={{ width: "90px", height: "90px" }}
           className="img-fluid"
-        /><span style={{ fontSize: '20px', display: 'block', color: '#5a97e7' }}>NLP</span>
+        /><span style={{ fontSize: '20px', display: 'block' }}>
+          <span style={{ color: 'rgb(237 237 237)' }}>N</span>
+          <span style={{ color: ' rgb(78 132 231)' }}>L</span>
+          <span style={{ color: 'rgb(237 208 116)' }}>P</span>
+          </span>
       </Col>
     </Row>
   );

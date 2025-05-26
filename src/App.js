@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import Skill from './pages/Skillset';
 import Project from './pages/Projects';
 import Resume from './pages/Resume';
+import Certificates from './pages/Certificates';
 import Contact from './pages/Contact';
 
 import Navbar from "./components/Navbar/Navbar";
@@ -72,6 +73,7 @@ function App() {
           <Route path="/project" element={<Project />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/certificates" element={<Certificates />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <Footer />

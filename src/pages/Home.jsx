@@ -1,10 +1,11 @@
 import React from 'react';
 import { Container, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
-import homeLogo from '../assets/about.png';
+// import homeLogo from '../assets/about.png';
 import Particle from '../components/Particle';
 import About from '../components/Home/About';
 import Type from '../components/Home/Type';
+import NeuralNetworkCanvas from "../components/Home/NeuralNetworkCanvas";
 
 const Home = () => {
   return (
@@ -52,7 +53,7 @@ const Home = () => {
 
             <Col md={5} style={{ paddingBottom: 20 }}>
             <motion.img
-              src={homeLogo}
+              // src={homeLogo}
               animate={{ scale: [1, 1.05, 1] }}
               transition={{
                 duration: 3,
@@ -62,6 +63,7 @@ const Home = () => {
               className="img-fluid"
               style={{ maxHeight: "450px" }}
             />
+            <NeuralNetworkCanvas />
             </Col>
           </Row>
         </Container>

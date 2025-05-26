@@ -82,12 +82,12 @@ const Projects = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
-          Recent Top |<strong className="yellow"> Works </strong>
+         👨‍💻 Recent Top |<strong className="yellow"> Works </strong>
         </motion.h1>
 
         <motion.p
           className="section-heading"
-          style={{ fontSize: "18px" }}
+          style={{ fontSize: "18px",color:'#e0e0e05e' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}

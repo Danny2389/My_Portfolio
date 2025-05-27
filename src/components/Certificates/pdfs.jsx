@@ -6,7 +6,7 @@ import cert1 from "../../assets/certificates/Data_Science_Foundation.pdf";
 import cert2 from "../../assets/certificates/Rubixe.pdf";
 import cert3 from "../../assets/certificates/SytiqHub.pdf";
 import cert4 from "../../assets/certificates/ICONAT.pdf";
-
+import "./pdf.css";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const certificates = [
@@ -32,7 +32,7 @@ const Pdfs = () => {
         {certificates.map((cert, index) => (
           <Col md={4} sm={6} xs={12} key={index} className="mb-4">
             <motion.div
-              whileHover={{ scale: 1.03 }}
+              whileHover={{ scale: 1.05 }}
               className="certificate-box"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
@@ -40,7 +40,7 @@ const Pdfs = () => {
                 height: "250px",
                 borderRadius: "10px",
                 boxShadow: "rgb(96 0 206 / 50%) -6px 3px 10px",
-                padding: "10px",
+                padding: "20px",
                 overflow: "hidden",
                 position: "relative",
                 transition: "all 0.3s ease-in-out",
@@ -116,19 +116,21 @@ const Pdfs = () => {
   backdropClassName="custom-backdrop"
   contentClassName="glass-modal"
 >
-  <Modal.Header style={{ display:"none" }}>
-    <Modal.Title>{selectedCert?.title}</Modal.Title>
-  </Modal.Header>
- {selectedCert && (
+  {selectedCert && (
+    <div className="w-full flex justify-center px-4 sm:px-9">
       <Document file={selectedCert.file}>
         {Array.from(new Array(selectedCert.pages), (_, pageIndex) => (
           <Page
+          
+            className="transparent-pdf-page"
             key={`page_${pageIndex + 1}`}
             pageNumber={pageIndex + 1}
+            width={Math.min(window.innerWidth * 0.85, 600)}
           />
         ))}
       </Document>
-    )}
+    </div>
+  )}
 </Modal>
     </Container>
   );

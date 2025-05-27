@@ -1,0 +1,10 @@
+.glass-modal {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px); 
+  border-radius: 1rem;
+  border: none;
+}
+
+.custom-backdrop {
+  background-color: rgba(0, 0, 0, 0.7); 
+}

@@ -4,25 +4,29 @@ import Typewriter from "typewriter-effect";
 
 const Type = () => {
     return (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          <Typewriter
-            options={{
-              strings: [
-                "Data Scientist",
-                "Passionate Machine Learner",
-                "Committed Open Source Contributor",
-                "Effective Problem Solver"
-              ],
-              autoStart: true,
-              loop: true,
-              deleteSpeed: 50,
-            }}
-          />
-        </motion.div>
+       <motion.div
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 1, delay: 1 }}
+>
+  <div style={{ fontSize: "14px" }}>
+    <Typewriter
+      options={{
+        strings: [
+          "1.5 Year + Experience",
+          "Data Scientist",
+          "Passionate Machine Learner",
+          "Committed Open Source Contributor",
+          "Effective Problem Solver"
+        ],
+        autoStart: true,
+        loop: true,
+        deleteSpeed: 50,
+      }}
+    />
+  </div>
+</motion.div>
+
     )
 }
 

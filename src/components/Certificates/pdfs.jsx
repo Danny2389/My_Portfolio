@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Modal, Button } from "react-bootstrap";
 import { Document, Page, pdfjs } from "react-pdf";
 import { motion } from "framer-motion";
 import cert1 from "../../assets/certificates/Data_Science_Foundation.pdf";
 import cert2 from "../../assets/certificates/Rubixe.pdf";
 import cert3 from "../../assets/certificates/SytiqHub.pdf";
 import cert4 from "../../assets/certificates/ICONAT.pdf";
-
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -19,10 +18,16 @@ const certificates = [
 
 const Pdfs = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedCert, setSelectedCert] = useState(null);
+
+  const handleZoomClick = (cert) => {
+    setSelectedCert(cert);
+    setShowModal(true);
+  };
 
   return (
     <Container className="pt-5 text-center">
-      
       <Row className="justify-content-center">
         {certificates.map((cert, index) => (
           <Col md={4} sm={6} xs={12} key={index} className="mb-4">
@@ -43,12 +48,7 @@ const Pdfs = () => {
               }}
             >
               {hoveredIndex === index ? (
-                <a
-                  href={cert.file}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                >
+                <>
                   <div
                     style={{
                       height: "100%",
@@ -67,7 +67,27 @@ const Pdfs = () => {
                       ))}
                     </Document>
                   </div>
-                </a>
+                  <Button
+                    size="sm"
+                    style={{
+                      position: "absolute",
+                      bottom: "10px",
+                      right: "10px",
+                      fontWeight: "bold",
+                      fontSize: "13px",
+                      borderRadius: "20px",
+                      backdropFilter: "blur(6px)", 
+                      padding: "5px 8px",
+                      boxShadow: "rgb(96 0 206 / 50%) -6px 3px 10px",
+                      transition: "all 0.3s ease-in-out",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => handleZoomClick(cert)}
+                  >
+                    🔍
+                  </Button>
+
+                </>
               ) : (
                 <div
                   style={{
@@ -87,6 +107,29 @@ const Pdfs = () => {
           </Col>
         ))}
       </Row>
+
+      {/* Modal Viewer */}
+      <Modal
+  show={showModal}
+  onHide={() => setShowModal(false)}
+  centered
+  backdropClassName="custom-backdrop"
+  contentClassName="glass-modal"
+>
+  <Modal.Header style={{ display:"none" }}>
+    <Modal.Title>{selectedCert?.title}</Modal.Title>
+  </Modal.Header>
+ {selectedCert && (
+      <Document file={selectedCert.file}>
+        {Array.from(new Array(selectedCert.pages), (_, pageIndex) => (
+          <Page
+            key={`page_${pageIndex + 1}`}
+            pageNumber={pageIndex + 1}
+          />
+        ))}
+      </Document>
+    )}
+</Modal>
     </Container>
   );
 };

@@ -51,19 +51,15 @@ const Home = () => {
               </motion.div>
             </Col>
 
-            <Col md={5} style={{ paddingBottom: 20 }}>
-            <motion.img
-              // src={homeLogo}
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="img-fluid"
-              style={{ maxHeight: "450px" }}
-            />
+            <Col md={5} style={{ paddingBottom: 50 }}>
+            <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: false, amount: 0.3 }}
+      >
             <NeuralNetworkCanvas />
+            </motion.div>
             </Col>
           </Row>
         </Container>
@@ -74,7 +70,7 @@ const Home = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        viewport={{ once: false, amount: 0.3 }} // amount is how much should be visible before triggering
+        viewport={{ once: false, amount: 0.3 }} 
       >
 
         <About />

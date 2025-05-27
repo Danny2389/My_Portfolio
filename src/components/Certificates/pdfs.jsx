@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, Row, Col, Modal, Button } from "react-bootstrap";
 import { Document, Page, pdfjs } from "react-pdf";
 import { motion } from "framer-motion";
-import cert4 from "../../assets/certificates/DMCDS.pdf";
+import cert4 from "../../assets/certificates/COCMPL25052717483433473472.pdf";
 import cert2 from "../../assets/certificates/Data_Science_Foundation.pdf";
 import cert3 from "../../assets/certificates/Rubixe.pdf";
 import cert4 from "../../assets/certificates/SytiqHub.pdf";

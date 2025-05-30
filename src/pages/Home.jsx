@@ -37,8 +37,8 @@ const Home = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3, duration: 0.7 }}
               >
-                I'M
-                <strong className="main-name"> Dinesh, I turn data into decisions.</strong>
+                 <strong className="main-name">I'M</strong> Dinesh
+                <strong className="main-name">, I turn data into decisions.</strong>
               </motion.h1>
 
               <motion.div

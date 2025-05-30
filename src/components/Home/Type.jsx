@@ -9,11 +9,11 @@ const Type = () => {
   animate={{ opacity: 1 }}
   transition={{ duration: 1, delay: 1 }}
 >
-  <div style={{ fontSize: "14px" }}>
+  <div style={{ fontSize: "15px"}}>
     <Typewriter
       options={{
         strings: [
-          "1.5 Year + Experience",
+          "1 Year + Experience",
           "Data Scientist",
           "Passionate Machine Learner",
           "Committed Open Source Contributor",

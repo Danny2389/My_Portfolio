@@ -1,10 +1,10 @@
-describe('🧪 Full UI Test - Dinesh Portfolio (All Pages)', () => {
-    const base = 'http://localhost:3000'
+// describe('🧪 Full UI Test - Dinesh Portfolio (All Pages)', () => {
+//     const base = 'http://localhost:3000'
   
-    // 🌐 HOME PAGE
-        beforeEach(() => {
-            cy.visit($base)
-          })
+//     // 🌐 HOME PAGE
+//         beforeEach(() => {
+//             cy.visit($base)
+//           })
   
 //       it('Has correct title and sections', () => {
 //         cy.title().should('include', 'Dinesh')
@@ -78,4 +78,4 @@ describe('🧪 Full UI Test - Dinesh Portfolio (All Pages)', () => {
 //       it('Has correct heading', () => {
 //         cy.get('h1').invoke('text').should('include', 'Resume')
 //     })
-})
+// })

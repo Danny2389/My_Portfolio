@@ -48,6 +48,7 @@ const ProjectCard = (props) => {
             alignItems: "center",
             alignContent: "flex-end",
             textAlign: "center",
+            color:"red",
             position: "relative",
             bottom: "0px",
           }}
@@ -77,7 +78,7 @@ const ProjectCard = (props) => {
             }}
           >
             <CgWebsite /> &nbsp;
-            {"Demo"}
+            {""}
           </Button>
         )}
       </Card.Body>

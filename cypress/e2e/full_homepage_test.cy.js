@@ -38,12 +38,13 @@ describe('Full Homepage Test - Dinesh Portfolio', () => {
       cy.contains('Skillset').click().should('be.visible')
       cy.contains('Projects').click().should('be.visible')
       cy.contains('Resume').click().should('be.visible')
+      cy.contains('Certificates').click().should('be.visible')
       cy.contains('Contact').click().should('be.visible')
     })
   
     it('Has footer and links', () => {
       cy.get('.footer').should('exist')
-      cy.contains('Copyright').should('be.visible')
+      cy.contains('2025 Dinesh™ | All Rights Reserved.').should('be.visible')
       cy.get('a').should('have.length.greaterThan', 1)
       cy.get('.home-about-social-links > :nth-child(1)').click().wait(4000).should('be.visible')
       cy.get('.home-about-social-links > :nth-child(2)').click().wait(4000).should('be.visible')

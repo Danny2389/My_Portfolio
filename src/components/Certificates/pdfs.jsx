@@ -7,10 +7,12 @@ import cert2 from "../../assets/certificates/Data_Science_Foundation.pdf";
 import cert3 from "../../assets/certificates/Rubixe.pdf";
 import cert4 from "../../assets/certificates/SytiqHub.pdf";
 import cert5 from "../../assets/certificates/ICONAT.pdf";
+import cert6 from "../../assets/certificates/Testing.pdf";
 import "./pdf.css";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const certificates = [
+  { file: cert6, title: "ThinkLogic_Automation_Testing", pages: 1 },
   { file: cert1,  title:  "DataMites_CDS", pages: 1 },
   { file: cert2, title: "IABAC_Data_Science_Foundation", pages: 1 },
   { file: cert3, title: "Rubixe Internship", pages: 1 },

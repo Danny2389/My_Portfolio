@@ -10,7 +10,8 @@ import {
   SiMysql,
   SiBootstrap,
   SiMongodb,
-  SiHtml5
+  SiHtml5,
+  SiCypress
 } from "react-icons/si";
 
 const Techstack = () => {
@@ -51,7 +52,11 @@ const Techstack = () => {
         <SiBootstrap />
         <span style={{ fontSize: '20px', display: 'block' }}>Bootstrap</span>
       </Col>
-      <Col xs={4} md={2} className="tech-icons hover-icon">
+      <Col xs={4} md={2} className="tech-icons hover-icon" style={{ margin: '50px', color : '#08ffff' }}>
+        <  SiCypress />
+        <span style={{ fontSize: '20px', display: 'block' }}>Cypress</span>
+      </Col>
+      {/* <Col xs={4} md={2} className="tech-icons hover-icon">
         <img
           src={require("../../assets/skills/Selenium.png")}
           title="Selenium"
@@ -60,7 +65,7 @@ const Techstack = () => {
           className="img-fluid"
         />
         <span style={{ fontSize: '20px', display: 'block', color : '#c00929'}}>Selenium</span>
-      </Col>
+      </Col> */}
       <Col xs={4} md={2} title="GitHub" className="tech-icons hover-icon">
         <DiGit />
         <span style={{ fontSize: '20px', display: 'block' }}>GitHub</span>

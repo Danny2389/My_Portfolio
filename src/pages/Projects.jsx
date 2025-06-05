@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import ProjectCard from "../components/Projects/ProjectCard";
 import Particle from "../components/Particle";
 import flight from "../assets/projects/flight.png";
-import healthcare from "../assets/projects/healthcare.png";
+// import healthcare from "../assets/projects/healthcare.png";
 import heart from "../assets/projects/heart.png";
-import insurance from "../assets/projects/insurance .png";
+import insurance from "../assets/projects/insurance.png";
 import certf from "../assets/projects/certf.png";
 import pg from "../assets/projects/pg.png";
 
@@ -34,12 +34,12 @@ const containerVariant = {
 };
 const Projects = () => {
   const projects = [
-    {
-      imgPath: healthcare,
-      title: "🏥 Health Care App",
-      description:"Healthcare(Accessible, Simple, Healthcare Assistance) A healthcare solution designed to overcome geographic barriers and appointment scheduling challenges. It simplifies appointment booking and enables virtual consultations, ensuring 24/7 medical assistance. Designed a revolutionary healthcare solution that enhances patient care and accessibility. Leveraged React.js, Machine Learning, Neural Networks, AI Chatbot, and MySQL to develop an intelligent, responsive system. Enhanced patient care through a user-friendly mobile application, reducing delays and ensuring seamless healthcare access. With intuitive mobile consultations and the message “CARE IS ON THE WAY”.",
-      ghLink: "https://github.com/Danny2389/Health_Care_App.git"
-    },
+    // {
+    //   imgPath: healthcare,
+    //   title: "🏥 Health Care App",
+    //   description:"Healthcare(Accessible, Simple, Healthcare Assistance) A healthcare solution designed to overcome geographic barriers and appointment scheduling challenges. It simplifies appointment booking and enables virtual consultations, ensuring 24/7 medical assistance. Designed a revolutionary healthcare solution that enhances patient care and accessibility. Leveraged React.js, Machine Learning, Neural Networks, AI Chatbot, and MySQL to develop an intelligent, responsive system. Enhanced patient care through a user-friendly mobile application, reducing delays and ensuring seamless healthcare access. With intuitive mobile consultations and the message “CARE IS ON THE WAY”.",
+    //   ghLink: "https://github.com/Danny2389/Health_Care_App.git"
+    // },
     {
       imgPath: flight,
       title: "✈️ Flight Fare Prediction",

@@ -14,10 +14,10 @@ const Type = () => {
       options={{
         strings: [
           "1 Year + Experience",
+          "Automation Testing",
           "Data Scientist",
           "Passionate Machine Learner",
-          "Committed Open Source Contributor",
-          "Effective Problem Solver"
+          "Committed Open Source Contributor"
         ],
         autoStart: true,
         loop: true,

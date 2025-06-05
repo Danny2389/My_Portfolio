@@ -36,7 +36,7 @@ const About = () => {
                 <br /><br />
                 I have a passion for working with <b className="yellow">Machine Learning, Deep Learning</b> and
                 <i><b className="yellow"> modern Python libraries and frameworks</b></i> like
-                <i><b className="yellow"> Flask, Spark, and Selenium</b></i>.
+                <i><b className="yellow"> Flask, Spark, and Cypress</b></i>.
                 <br /><br />
                 I am also interested in building innovative
                 <i><b className="yellow"> Web Technologies, creating ML Prediction models</b></i> and exploring

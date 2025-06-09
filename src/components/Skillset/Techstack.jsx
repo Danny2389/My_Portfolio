@@ -10,6 +10,7 @@ import {
   SiMysql,
   SiBootstrap,
   SiMongodb,
+  SiSelenium,
   // SiHtml5,
   SiCypress
 } from "react-icons/si";
@@ -17,25 +18,13 @@ import {
 const Techstack = () => {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      <Col xs={4} md={2} className="tech-icons hover-icon">
-        <img
-          src={require("../../assets/skills/Selenium.png")}
-          title="Selenium"
-          alt="Tool Icon"
-          style={{ width: "80px", height: "80px" }}
-          className="img-fluid"
-        />
-        <span style={{ fontSize: '20px', display: 'block', color : '#c00929'}}>Selenium</span>
+      <Col xs={4} md={2} title="Html5/css" className="tech-icons hover-icon" style={{ color : '#43b02a'}}>
+        <SiSelenium  /><span style={{ fontSize: '20px', display: 'block',color : '#43b02a' }}>Selenium</span>
       </Col>
       <Col xs={4} md={2} className="tech-icons hover-icon" style={{ margin: '50px', color : '#08ffff' }}>
-        <  SiCypress />
+        <SiCypress />
         <span style={{ fontSize: '20px', display: 'block' }}>Cypress</span>
       </Col>
-
-      {/* <Col xs={4} md={2} title="Html5/css" className="tech-icons hover-icon">
-        <SiHtml5 /><span style={{ fontSize: '20px', display: 'block' }}>HTML5</span>
-      </Col> */}
-      
       <Col xs={4} md={2} className="tech-icons hover-icon">
         <img
           src={require("../../assets/skills/aws.png")}

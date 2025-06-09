@@ -10,19 +10,32 @@ import {
   SiMysql,
   SiBootstrap,
   SiMongodb,
-  SiHtml5,
+  // SiHtml5,
   SiCypress
 } from "react-icons/si";
 
 const Techstack = () => {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      <Col xs={4} md={2} title="Html5/css" className="tech-icons hover-icon">
+      <Col xs={4} md={2} className="tech-icons hover-icon">
+        <img
+          src={require("../../assets/skills/Selenium.png")}
+          title="Selenium"
+          alt="Tool Icon"
+          style={{ width: "80px", height: "80px" }}
+          className="img-fluid"
+        />
+        <span style={{ fontSize: '20px', display: 'block', color : '#c00929'}}>Selenium</span>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons hover-icon" style={{ margin: '50px', color : '#08ffff' }}>
+        <  SiCypress />
+        <span style={{ fontSize: '20px', display: 'block' }}>Cypress</span>
+      </Col>
+
+      {/* <Col xs={4} md={2} title="Html5/css" className="tech-icons hover-icon">
         <SiHtml5 /><span style={{ fontSize: '20px', display: 'block' }}>HTML5</span>
-      </Col>
-      <Col xs={4} md={2} title="JavaScript" className="tech-icons hover-icon">
-        <DiJavascript1 /><span style={{ fontSize: '20px', display: 'block' }}>JavaScript</span>
-      </Col>
+      </Col> */}
+      
       <Col xs={4} md={2} className="tech-icons hover-icon">
         <img
           src={require("../../assets/skills/aws.png")}
@@ -52,20 +65,9 @@ const Techstack = () => {
         <SiBootstrap />
         <span style={{ fontSize: '20px', display: 'block' }}>Bootstrap</span>
       </Col>
-      <Col xs={4} md={2} className="tech-icons hover-icon" style={{ margin: '50px', color : '#08ffff' }}>
-        <  SiCypress />
-        <span style={{ fontSize: '20px', display: 'block' }}>Cypress</span>
+      <Col xs={4} md={2} title="JavaScript" className="tech-icons hover-icon">
+        <DiJavascript1 /><span style={{ fontSize: '20px', display: 'block' }}>JavaScript</span>
       </Col>
-      {/* <Col xs={4} md={2} className="tech-icons hover-icon">
-        <img
-          src={require("../../assets/skills/Selenium.png")}
-          title="Selenium"
-          alt="Tool Icon"
-          style={{ width: "80px", height: "80px" }}
-          className="img-fluid"
-        />
-        <span style={{ fontSize: '20px', display: 'block', color : '#c00929'}}>Selenium</span>
-      </Col> */}
       <Col xs={4} md={2} title="GitHub" className="tech-icons hover-icon">
         <DiGit />
         <span style={{ fontSize: '20px', display: 'block' }}>GitHub</span>

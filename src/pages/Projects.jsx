@@ -7,7 +7,7 @@ import flight from "../assets/projects/flight.png";
 // import healthcare from "../assets/projects/healthcare.png";
 import heart from "../assets/projects/heart.png";
 import insurance from "../assets/projects/insurance.png";
-import certf from "../assets/projects/certf.png";
+// import certf from "../assets/projects/certf.png";
 import pg from "../assets/projects/pg.png";
 
 const fadeTiltVariant = {
@@ -58,12 +58,12 @@ const Projects = () => {
       description: "A machine learning project that predicts medical insurance costs based on user features like age, BMI, gender, smoking status, and region. It uses algorithms like Linear Regression, Random Forest, and XGBoost to deliver accurate predictions. Ideal for learning regression models and cost analysis.",
       ghLink: "https://github.com/Danny2389/Insurance_Cost_Prediction.git"
     },
-    {
-      imgPath: certf,
-      title: "Certificate Generator",
-      description: "The Certificate Generator is a web application built using React, TypeScript, Tailwind CSS, and React-PDF. It allows users to easily generate internship certificates. This project serves as both a fun learning exercise and a useful tool for certificate creation. The app is designed to be user-friendly, leveraging modern web technologies for a seamless experience.",
-      ghLink: "https://github.com/Danny2389/Certificate_Generator.git"
-    },
+    // {
+    //   imgPath: certf,
+    //   title: "Certificate Generator",
+    //   description: "The Certificate Generator is a web application built using React, TypeScript, Tailwind CSS, and React-PDF. It allows users to easily generate internship certificates. This project serves as both a fun learning exercise and a useful tool for certificate creation. The app is designed to be user-friendly, leveraging modern web technologies for a seamless experience.",
+    //   ghLink: "https://github.com/Danny2389/Certificate_Generator.git"
+    // },
     {
       imgPath: pg,
       title: "Bike Rental with Machine Learning",

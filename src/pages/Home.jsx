@@ -53,11 +53,11 @@ const Home = () => {
 
             <Col md={5} style={{ paddingBottom: 50 }}>
             <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: false, amount: 0.3 }}
-      >
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: false, amount: 0.3 }}
+            >
             <NeuralNetworkCanvas />
             </motion.div>
             </Col>

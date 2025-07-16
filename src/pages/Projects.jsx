@@ -5,6 +5,8 @@ import ProjectCard from "../components/Projects/ProjectCard";
 import Particle from "../components/Particle";
 import flight from "../assets/projects/flight.png";
 // import healthcare from "../assets/projects/healthcare.png";
+import employeepa from "../assets/projects/employeepa.png";
+import salesefft from "../assets/projects/salesefft.png";
 import heart from "../assets/projects/heart.png";
 import insurance from "../assets/projects/insurance.png";
 // import certf from "../assets/projects/certf.png";
@@ -41,6 +43,12 @@ const Projects = () => {
     //   ghLink: "https://github.com/Danny2389/Health_Care_App.git"
     // },
     {
+      imgPath: employeepa,
+      title: "📊 Employee-Performance-Analysis",
+      description:"INX Future Inc, one of the leading data analytics and automation sloution provide with over 15 years of global business presence.Recent years employee performance indexes are not healthy and this becomes a growing concern to the top mnagement and also client satisfaction level came down by 8 percentage points.Mr.Brain CEO initiate a data science project which analyses the current employee data and find the core underlying causes of this performance issue.",
+      ghLink: "https://github.com/Danny2389/Health_Care_App.git"
+    },
+    {
       imgPath: flight,
       title: "✈️ Flight Fare Prediction",
       description: "A machine learning project that predicts flight ticket prices based on various parameters like airline, source, destination, departure/arrival times, duration, and more. Built using Python, Pandas, and Scikit-learn, this project involves data preprocessing, feature engineering, and model training with algorithms like Random Forest and XGBoost. Ideal for exploring regression techniques and deployment-ready ML solutions.",
@@ -64,6 +72,12 @@ const Projects = () => {
     //   description: "The Certificate Generator is a web application built using React, TypeScript, Tailwind CSS, and React-PDF. It allows users to easily generate internship certificates. This project serves as both a fun learning exercise and a useful tool for certificate creation. The app is designed to be user-friendly, leveraging modern web technologies for a seamless experience.",
     //   ghLink: "https://github.com/Danny2389/Certificate_Generator.git"
     // },
+    {
+      imgPath: salesefft,
+      title: "📈 Sales-Effectivenes",
+      description:"Sales Effectiveness refers to how well a company’s sales team performs to meet its revenue targets. This involves analyzing key factors like lead quality, sales strategies, conversion rates, customer engagement, and team performance. The goal is to optimize processes, improve decision-making, and boost overall productivity to convert more leads into customers efficiently.",
+      ghLink: "https://github.com/Danny2389/Health_Care_App.git"
+    },
     {
       imgPath: pg,
       title: "Bike Rental with Machine Learning",

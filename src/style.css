@@ -107,7 +107,7 @@ html {
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: rgba(77, 1, 165, 0.959);
+    /* background: rgba(77, 1, 165, 0.959); */
     border-radius: 12px;
   }
   

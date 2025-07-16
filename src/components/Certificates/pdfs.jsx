@@ -12,7 +12,7 @@ import "./pdf.css";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const certificates = [
-  { file: cert5, title: "NASSCOM_Certification", pages: 4 },
+  { file: cert5, title: "NASSCOM_Certification", pages: 2 },
   { file: cert1,  title:  "DataMites_CDS", pages: 1 },
   { file: cert2, title: "IABAC_Data_Science_Foundation", pages: 1 },
   { file: cert3, title: "Rubixe Internship", pages: 1 },

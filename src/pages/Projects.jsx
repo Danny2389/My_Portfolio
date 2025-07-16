@@ -46,7 +46,7 @@ const Projects = () => {
       imgPath: employeepa,
       title: "📊 Employee-Performance-Analysis",
       description:"INX Future Inc, one of the leading data analytics and automation sloution provide with over 15 years of global business presence.Recent years employee performance indexes are not healthy and this becomes a growing concern to the top mnagement and also client satisfaction level came down by 8 percentage points.Mr.Brain CEO initiate a data science project which analyses the current employee data and find the core underlying causes of this performance issue.",
-      ghLink: "https://github.com/Danny2389/Health_Care_App.git"
+      ghLink: "https://github.com/Danny2389/Employee_Performance_Analysis__INX_Future_Inc.git"
     },
     {
       imgPath: flight,
@@ -76,7 +76,7 @@ const Projects = () => {
       imgPath: salesefft,
       title: "📈 Sales-Effectivenes",
       description:"Sales Effectiveness refers to how well a company’s sales team performs to meet its revenue targets. This involves analyzing key factors like lead quality, sales strategies, conversion rates, customer engagement, and team performance. The goal is to optimize processes, improve decision-making, and boost overall productivity to convert more leads into customers efficiently.",
-      ghLink: "https://github.com/Danny2389/Health_Care_App.git"
+      ghLink: "https://github.com/Danny2389/Sales-Effectiveness.git"
     },
     {
       imgPath: pg,

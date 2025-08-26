@@ -3,9 +3,9 @@ import { Col, Row } from "react-bootstrap";
 import {
   SiVisualstudiocode,
   SiPycharm,
-  SiHeroku,
   SiNetlify
 } from "react-icons/si";
+import { TbBrandVercel} from "react-icons/tb";
 
 const Toolstack = () => {
   return (
@@ -24,7 +24,7 @@ const Toolstack = () => {
         <SiNetlify /><span style={{ fontSize: '20px', display: 'block' }}>Netlify</span>
       </Col>
       <Col xs={4} md={2} title="Heruku" className="tech-icons">
-        <SiHeroku /><span style={{ fontSize: '20px', display: 'block' }}>Heruku</span>
+        <TbBrandVercel /><span style={{ fontSize: '20px', display: 'block' }}>Vercel</span>
       </Col>
     </Row>
   );

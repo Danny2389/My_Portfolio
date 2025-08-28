@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Container, Row, Col, Card, Table, Button, Badge, Form, Alert, Modal } from 'react-bootstrap';
+import { Container, Row, Col, Card, Table, Button, Badge, Form, Modal } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import Cookies from 'js-cookie';
 import { getContactSubmissions, getWebsiteVisits, deleteContactSubmission, deleteWebsiteVisit } from '../lib/supabase';
@@ -12,8 +12,8 @@ const AdminDashboard = () => {
   const [websiteVisits, setWebsiteVisits] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('overview');
-  const [sortBy, setSortBy] = useState('created_at');
-  const [sortOrder, setSortOrder] = useState('desc');
+  const [sortBy] = useState('created_at');
+  const [sortOrder] = useState('desc');
   const [filterDate, setFilterDate] = useState('');
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [deleteItem, setDeleteItem] = useState(null);

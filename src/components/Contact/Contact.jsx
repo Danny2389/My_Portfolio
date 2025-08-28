@@ -1,10 +1,11 @@
 import React, { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
 import { Container, Row, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import contact from "../../assets/contact.png";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion"; // Importing framer-motion
+import { submitContactForm } from "../../lib/supabase";
+import { getUserIP } from "../../utils/visitTracker";
 import "./Contact.css";
 
 const Contact = () => {
@@ -37,28 +38,31 @@ const Contact = () => {
       return;
     }
 
-    emailjs
-      .sendForm(
-        "service_msrxzy7", // ✅ YOUR SERVICE ID
-        "template_mrgixqm", // ✅ YOUR TEMPLATE ID
-        form.current,
-        "4JTtnu4FId60vAbq1" // ✅ YOUR PUBLIC KEY
-      )
-      .then(
-        (result) => {
-          console.log("SUCCESS:", result.text);
+    // Submit to Supabase
+    const handleSubmission = async () => {
+      try {
+        const ipAddress = await getUserIP();
+        const result = await submitContactForm(formData, ipAddress);
+        
+        if (result.success) {
           setFormStatus({ success: true, error: false });
           setFormData({
+            company_name: "",
+            contact_info: "",
             from_name: "",
             reply_to: "",
             message: "",
           });
-        },
-        (error) => {
-          console.error("FAILED...", error.text);
+        } else {
           setFormStatus({ error: true, success: false });
         }
-      );
+      } catch (error) {
+        console.error('Submission error:', error);
+        setFormStatus({ error: true, success: false });
+      }
+    };
+
+    handleSubmission();
   };
 
   return (

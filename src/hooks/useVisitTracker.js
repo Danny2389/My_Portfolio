@@ -1,6 +1,7 @@
+// src/hooks/useVisitTracker.js
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { trackPageVisit } from "@vercel/analytics/react";
+import { track } from "@vercel/analytics/react"; // ✅ use 'track' instead of 'trackPageVisit'
 
 export function useVisitTracker() {
   const location = useLocation();
@@ -8,7 +9,7 @@ export function useVisitTracker() {
   useEffect(() => {
     if (!location.pathname.startsWith("/admin")) {
       try {
-        trackPageVisit(); // track the page visit
+        track("pageview"); // send a pageview event
       } catch (err) {
         console.warn("Visit tracking failed:", err);
       }

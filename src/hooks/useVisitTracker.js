@@ -5,7 +5,7 @@ import { trackPageVisit } from '../utils/visitTracker';
 
 export function useVisitTracker() { 
   useEffect(() => {
-    if (!window.location.pathname.startsWith("/admin")) {
+    if (!window.location.pathname.startsWith("/admin-:adminId")) {
       try {
         // Your tracking logic here
       } catch (err) {

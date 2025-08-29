@@ -1,4 +1,4 @@
-// import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -23,6 +23,7 @@ import "./App.css";
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+// Preloader Component
 const Preloader = ({ load }) => {
   return (
     load && (
@@ -33,6 +34,22 @@ const Preloader = ({ load }) => {
   );
 };
 
+// Visit Tracker with conditional analytics for non-admin pages
+const VisitTracker = () => {
+  useEffect(() => {
+    // Only track visits if not on admin page
+    if (!window.location.pathname.startsWith("/admin")) {
+      try {
+        useVisitTracker(); // Your existing hook
+      } catch (err) {
+        console.warn("Visit tracking failed:", err);
+      }
+    }
+  }, []);
+  return null;
+};
+
+// Main App Layout
 const AppLayout = ({ load }) => (
   <>
     <Preloader load={load} />
@@ -47,16 +64,14 @@ const AppLayout = ({ load }) => (
   </>
 );
 
-const VisitTracker = () => {
-  useVisitTracker();
-  return null;
-};
-
+// Admin Layout
 const AdminLayout = () => (
   <>
     <Outlet />
   </>
 );
+
+// Router Setup
 function AppRouter() {
   // const [load, setLoad] = useState(true);
 
@@ -77,7 +92,7 @@ function AppRouter() {
           { path: "resume", element: <Resume /> },
           { path: "certificates", element: <Certificates /> },
           { path: "contact", element: <Contact /> },
-          { path: "*", element: <Navigate to = "/" replace /> },
+          { path: "*", element: <Navigate to="/" replace /> },
         ],
       },
       {

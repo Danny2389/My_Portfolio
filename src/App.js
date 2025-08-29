@@ -5,6 +5,7 @@ import {
   Navigate,
   Outlet,
 } from "react-router-dom";
+import { useVisitTracker } from "./hooks/useVisitTracker";
 import Home from "./pages/Home";
 import Skill from "./pages/Skillset";
 import Project from "./pages/Projects";
@@ -46,17 +47,7 @@ const AppLayout = ({ load }) => (
     <Footer />
   </>
 );
-export function useVisitTracker() {
-  useEffect(() => {
-    if (!window.location.pathname.startsWith("/admin")) {
-      try {
-        // Your tracking logic here
-      } catch (err) {
-        console.warn("Visit tracking failed:", err);
-      }
-    }
-  }, []);
-}
+
 const VisitTracker = () => {
   useVisitTracker();
   return null;

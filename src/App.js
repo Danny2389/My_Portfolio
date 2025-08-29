@@ -23,6 +23,7 @@ import "./App.css";
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+// Preloader Component
 const Preloader = ({ load }) => {
   return (
     load && (
@@ -33,6 +34,13 @@ const Preloader = ({ load }) => {
   );
 };
 
+// VisitTracker Component
+const VisitTracker = () => {
+  useVisitTracker(); // Hook is always called at top level
+  return null;
+};
+
+// App Layout for normal pages
 const AppLayout = ({ load }) => (
   <>
     <Preloader load={load} />
@@ -47,16 +55,13 @@ const AppLayout = ({ load }) => (
   </>
 );
 
-const VisitTracker = () => {
-  useVisitTracker();
-  return null;
-};
-
+// Admin Layout (no analytics tracking)
 const AdminLayout = () => (
   <>
     <Outlet />
   </>
 );
+
 function AppRouter() {
   // const [load, setLoad] = useState(true);
 
@@ -77,7 +82,7 @@ function AppRouter() {
           { path: "resume", element: <Resume /> },
           { path: "certificates", element: <Certificates /> },
           { path: "contact", element: <Contact /> },
-          { path: "*", element: <Navigate to = "/" replace /> },
+          { path: "*", element: <Navigate to="/" replace /> },
         ],
       },
       {

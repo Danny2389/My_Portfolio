@@ -5,7 +5,6 @@ import {
   Navigate,
   Outlet,
 } from "react-router-dom";
-import { useVisitTracker } from "./hooks/useVisitTracker";
 import Home from "./pages/Home";
 import Skill from "./pages/Skillset";
 import Project from "./pages/Projects";

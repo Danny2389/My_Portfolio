@@ -28,5 +28,6 @@ export const trackPageVisit = async (pageUrl, username = '') => {
     await trackVisit(visitData);
   } catch (error) {
     console.error('Error tracking page visit:', error);
+    // Silently fail - don't break the app
   }
 };

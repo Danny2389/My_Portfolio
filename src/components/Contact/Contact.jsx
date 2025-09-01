@@ -21,6 +21,7 @@ const Contact = () => {
   const [formStatus, setFormStatus] = useState({
     error: false,
     success: false,
+    loading: false,
   });
 
   const handleChange = (e) => {
@@ -30,11 +31,12 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setFormStatus({ error: false, success: false, loading: true });
 
     const { from_name, reply_to, message, company_name, contact_info } = formData;
 
     if (!from_name || !reply_to || !message || !company_name || !contact_info) {
-      setFormStatus({ error: true, success: false });
+      setFormStatus({ error: true, success: false, loading: false });
       return;
     }
 
@@ -45,7 +47,7 @@ const Contact = () => {
         const result = await submitContactForm(formData, ipAddress);
         
         if (result.success) {
-          setFormStatus({ success: true, error: false });
+          setFormStatus({ success: true, error: false, loading: false });
           setFormData({
             company_name: "",
             contact_info: "",
@@ -54,11 +56,11 @@ const Contact = () => {
             message: "",
           });
         } else {
-          setFormStatus({ error: true, success: false });
+          setFormStatus({ error: true, success: false, loading: false });
         }
       } catch (error) {
         console.error('Submission error:', error);
-        setFormStatus({ error: true, success: false });
+        setFormStatus({ error: true, success: false, loading: false });
       }
     };
 
@@ -161,13 +163,23 @@ const Contact = () => {
                 ✅ Message sent successfully! I will get back to you soon.
               </motion.span>
             )}
+            {formStatus.loading && (
+              <motion.span
+                className="done"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1, duration: 0.3 }}
+              >
+                📤 Sending message...
+              </motion.span>
+            )}
             <motion.span
                 className="not-done"
                 initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.1, duration: 0.5 }}
               >
-            <Button type="submit" className="button"
+            <Button type="submit" className="button" disabled={formStatus.loading}
             > Send </Button></motion.span>
           </form>
         </Col>

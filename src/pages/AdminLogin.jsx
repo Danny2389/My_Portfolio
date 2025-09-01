@@ -10,57 +10,52 @@ const AdminLogin = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [validUrl, setValidUrl] = useState(false);
+  const [validUrl, setValidUrl] = useState(true); // Default to true to avoid initial blocking
 
   useEffect(() => {
-    const verifyUrl = async () => {
-      const result = await verifyAdminUrl(adminId);
-      if (result.success) {
-        setValidUrl(true);
-        setUsername(result.data.username);
-      } else {
-        setError('Invalid admin URL');
+    // Check if already logged in
+    const adminSession = Cookies.get('admin_session');
+    if (adminSession) {
+      try {
+        const session = JSON.parse(adminSession);
+        if (session.adminId === adminId) {
+          navigate(`/admin-${adminId}/dashboard`);
+          return;
+        }
+      } catch (e) {
+        // Invalid session, continue with login
+        Cookies.remove('admin_session');
       }
-      setLoading(false);
-    };
+    }
 
-    verifyUrl();
-  }, [adminId]);
+    // For demo purposes, set default values
+    setUsername('portfolio_admin');
+    setValidUrl(true);
+  }, [adminId, navigate]);
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError('');
 
-    const result = await adminLogin(username, password);
-    
-    if (result.success) {
+    // For demo purposes, simple password check
+    if (password === 'admin123') {
       // Set admin session cookie
       Cookies.set('admin_session', JSON.stringify({
-        username: result.data.username,
+        username: username,
         adminId: adminId,
         loginTime: new Date().toISOString()
       }), { expires: 1 }); // 1 day expiry
       
       navigate(`/admin-${adminId}/dashboard`);
     } else {
-      setError(result.error || 'Login failed');
+      setError('Invalid password');
     }
     
     setLoading(false);
   };
-
-  if (loading) {
-    return (
-      <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
-        <div className="spinner-border text-primary" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </div>
-      </Container>
-    );
-  }
 
   if (!validUrl) {
     return (
@@ -137,6 +132,10 @@ const AdminLogin = () => {
             <div className="text-center mt-3">
               <small className="text-muted">
                 🛡️ Secure Admin Portal - Authorized Access Only
+              </small>
+              <br />
+              <small className="text-info mt-2 d-block">
+                Demo Password: admin123
               </small>
             </div>
           </motion.div>

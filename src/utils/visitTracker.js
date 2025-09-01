@@ -25,7 +25,10 @@ export const trackPageVisit = async (pageUrl, username = '') => {
       username: username
     };
 
-    await trackVisit(visitData);
+    const result = await trackVisit(visitData);
+    if (!result.success) {
+      console.warn('Visit tracking failed:', result.error);
+    }
   } catch (error) {
     console.error('Error tracking page visit:', error);
     // Silently fail - don't break the app

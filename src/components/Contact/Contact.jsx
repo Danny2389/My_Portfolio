@@ -43,6 +43,12 @@ const Contact = () => {
     // Submit to Supabase
     const handleSubmission = async () => {
       try {
+        // Skip submission if Supabase isn't properly configured
+        if (!process.env.REACT_APP_SUPABASE_URL || process.env.REACT_APP_SUPABASE_URL.includes('placeholder')) {
+          setFormStatus({ error: true, success: false, loading: false });
+          return;
+        }
+
         const ipAddress = await getUserIP();
         const result = await submitContactForm(formData, ipAddress);
         

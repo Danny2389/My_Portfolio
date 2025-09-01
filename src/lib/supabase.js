@@ -32,6 +32,11 @@ export const submitContactForm = async (formData, ipAddress) => {
 // Track website visits
 export const trackVisit = async (visitData) => {
   try {
+    // Skip tracking if Supabase isn't properly configured
+    if (supabaseUrl.includes('placeholder') || supabaseAnonKey.includes('placeholder')) {
+      return { success: false, error: 'Supabase not configured' };
+    }
+
     const { data, error } = await supabase
       .from('website_visits')
       .insert([visitData]);

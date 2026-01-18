@@ -11,15 +11,19 @@ import Project from "./pages/Projects";
 import Resume from "./pages/Resume";
 import Certificates from "./pages/Certificates";
 import Contact from "./pages/Contact";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import CopyPopup from "./components/copypop/CopyPopup";
+import { useVisitTracker } from "./hooks/useVisitTracker";
 
 import "./App.css";
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+// Preloader Component
 const Preloader = ({ load }) => {
   return (
     load && (
@@ -30,16 +34,31 @@ const Preloader = ({ load }) => {
   );
 };
 
+// VisitTracker Component
+const VisitTracker = () => {
+  useVisitTracker(); // Hook is always called at top level
+  return null;
+};
+
+// App Layout for normal pages
 const AppLayout = ({ load }) => (
   <>
     <Preloader load={load} />
     <Navbar />
     <CopyPopup />
     <ScrollToTop />
+    <VisitTracker />
     <div className="App" id={load ? "no-scroll" : "scroll"}>
       <Outlet />
     </div>
     <Footer />
+  </>
+);
+
+// Admin Layout (no analytics tracking)
+const AdminLayout = () => (
+  <>
+    <Outlet />
   </>
 );
 
@@ -63,7 +82,15 @@ function AppRouter() {
           { path: "resume", element: <Resume /> },
           { path: "certificates", element: <Certificates /> },
           { path: "contact", element: <Contact /> },
-          { path: "*", element: <Navigate to = "/" replace /> },
+          { path: "*", element: <Navigate to="/" replace /> },
+        ],
+      },
+      {
+        path: "/admin-:adminId",
+        element: <AdminLayout />,
+        children: [
+          { index: true, element: <AdminLogin /> },
+          { path: "dashboard", element: <AdminDashboard /> },
         ],
       },
     ],

@@ -1,8 +1,13 @@
+
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import LaptopImg from "../../assets/home-main.svg";
+import LaptopImg from "../../assets/about.png";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
+import {
+  ImPointRight,
+} from "react-icons/im";
+import Naukri from "../../assets/icons/Naukri.png";
 import {
   AiFillGithub,
   AiTwotoneMail
@@ -87,8 +92,8 @@ const About = () => {
                     label: "github"
                   },
                   {
-                    href: "https://www.naukri.com/mnjuser/profile?id=&altresid",
-                    icon: <img src={require("../../assets/icons/Naukri.png")} alt="Naukri" style={{ width: "40px", height: "40px" }} />,
+                    href: "https://www.naukri.com/code360/profile/dinesh_suri",
+                    icon: <img src={Naukri} alt="Naukri" style={{ width: "40px", height: "40px" }} />,
                     label: "naukri"
                   },
                   {

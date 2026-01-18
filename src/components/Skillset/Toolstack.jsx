@@ -6,6 +6,7 @@ import {
     SiVercel,
     SiPycharm,
 } from "react-icons/si";
+import ReactBootstrap from "../../assets/skills/react-bootstrap.png";
 
 const Toolstack = () => {
     return (
@@ -20,12 +21,12 @@ const Toolstack = () => {
             </Col>
             <Col xs={4} md={2} className="tech-icons">
                 <img
-                    src={require("../../assets/skills/react-bootstrap.png")}
+                    src={ReactBootstrap}
                     alt="React Bootstrap"
                     className="img-fluid"
                     style={{ width: "100px" }}
                 />
-                <span style={{color: 'rgb(59 209 237)', fontSize: '20px', display: 'block' }}>React Bootstrap</span>
+                <span style={{ color: 'rgb(59 209 237)', fontSize: '20px', display: 'block' }}>React Bootstrap</span>
             </Col>
             <Col xs={4} md={2} className="tech-icons">
                 <SiNetlify />

@@ -14,6 +14,12 @@ import {
     // SiHtml5,
     SiCypress
 } from "react-icons/si";
+import Coding from "../../assets/skills/coding.png";
+import NLP from "../../assets/skills/nlp.png";
+import DeepLearning from "../../assets/skills/deep-learning.png";
+import AWS from "../../assets/skills/aws.png";
+import Flask from "../../assets/skills/flask.png";
+import SQLServer from "../../assets/skills/sql-server.png";
 
 const Techstack = () => {
     return (
@@ -24,7 +30,7 @@ const Techstack = () => {
             </Col>
             <Col xs={4} md={2} className="tech-icons hover-icon">
                 <img
-                    src={require("../../assets/skills/coding.png")}
+                    src={Coding}
                     title="Machine Learning (ML)"
                     alt="Tool Icon"
                     style={{ width: "90px", height: "90px" }}
@@ -36,7 +42,7 @@ const Techstack = () => {
             </Col>
             <Col xs={4} md={2} className="tech-icons hover-icon">
                 <img
-                    src={require("../../assets/skills/nlp.png")}
+                    src={NLP}
                     title="Natural Language Processing"
                     alt="Tool Icon"
                     style={{ width: "90px", height: "90px" }}
@@ -49,7 +55,7 @@ const Techstack = () => {
             </Col>
             <Col xs={4} md={2} className="tech-icons hover-icon">
                 <img
-                    src={require("../../assets/skills/deep-learning.png")}
+                    src={DeepLearning}
                     title="Deep Learning"
                     alt="Tool Icon"
                     style={{ width: "100px", height: "100px" }}
@@ -59,7 +65,7 @@ const Techstack = () => {
             </Col>
             <Col xs={4} md={2} className="tech-icons hover-icon">
                 <img
-                    src={require("../../assets/skills/aws.png")}
+                    src={AWS}
                     title="AWS"
                     alt="Tool Icon"
                     style={{ width: "120px", height: "110px", filter: "invert(100%) brightness(200%)" }}
@@ -68,7 +74,7 @@ const Techstack = () => {
             </Col>
             <Col xs={4} md={2} className="tech-icons hover-icon">
                 <img
-                    src={require("../../assets/skills/flask.png")}
+                    src={Flask}
                     title="Flask"
                     alt="Tool Icon"
                     style={{ width: "90px", height: "90px", filter: "invert(100%) brightness(200%)" }}
@@ -81,7 +87,7 @@ const Techstack = () => {
             </Col>
             <Col xs={4} md={2} className="tech-icons hover-icon">
                 <img
-                    src={require("../../assets/skills/sql-server.png")}
+                    src={SQLServer}
                     title="SQL"
                     alt="Tool Icon"
                     style={{ width: "90px", height: "90px" }}

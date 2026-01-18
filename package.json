@@ -21,8 +21,8 @@
     "react-markdown": "^8.0.5",
     "react-parallax-tilt": "^1.7.90",
     "react-pdf": "^6.2.2",
-    "react-router-dom": "^6.7.0",
-    "react-scripts": "5.0.1",
+    "react-router-dom": "^7.12.0",
+    "react-scripts": "^5.0.1",
     "react-tsparticles": "^1.42.2",
     "three": "^0.176.0",
     "typewriter-effect": "^2.19.0",
@@ -53,12 +53,9 @@
     ]
   },
   "devDependencies": {
-    "@cypress/react": "^9.0.1",
-    "cypress": "^14.3.2",
     "pdfjs-dist": "^3.2.146"
   },
   "description": "<div align=\"center\">",
-  "main": "cypress.config.js",
   "author": "Dinesh",
   "license": "ISC"
 }

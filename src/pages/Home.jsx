@@ -37,7 +37,7 @@ const Home = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3, duration: 0.7 }}
               >
-                 <strong className="main-name">I'M</strong> Dinesh
+                <strong className="main-name">I'M</strong> Dinesh
                 <strong className="main-name">, I turn data into decisions.</strong>
               </motion.h1>
 
@@ -52,14 +52,14 @@ const Home = () => {
             </Col>
 
             <Col md={5} style={{ paddingBottom: 50 }}>
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-              viewport={{ once: false, amount: 0.3 }}
-            >
-            <NeuralNetworkCanvas />
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: false, amount: 0.3 }}
+              >
+                <NeuralNetworkCanvas />
+              </motion.div>
             </Col>
           </Row>
         </Container>
@@ -70,7 +70,7 @@ const Home = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        viewport={{ once: false, amount: 0.3 }} 
+        viewport={{ once: false, amount: 0.3 }}
       >
 
         <About />

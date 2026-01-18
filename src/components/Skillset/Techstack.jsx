@@ -32,7 +32,7 @@ const Techstack = () => {
         /><span style={{ fontSize: '20px', display: 'block' }}>
           <span style={{ color: '#5ecdac' }}>M</span>
           <span style={{ color: '#ed4d5d' }}>L</span>
-          </span>
+        </span>
       </Col>
       <Col xs={4} md={2} className="tech-icons hover-icon">
         <img
@@ -45,7 +45,7 @@ const Techstack = () => {
           <span style={{ color: 'rgb(237 237 237)' }}>N</span>
           <span style={{ color: ' rgb(78 132 231)' }}>L</span>
           <span style={{ color: 'rgb(237 208 116)' }}>P</span>
-          </span>
+        </span>
       </Col>
       <Col xs={4} md={2} className="tech-icons hover-icon">
         <img
@@ -90,16 +90,16 @@ const Techstack = () => {
       </Col>
       <Col xs={4} md={2} title="MySql" className="tech-icons hover-icon">
         <SiMysql />
-        <span style={{ fontSize: '20px', display: 'block', color:'black' }}>MySQL</span>
+        <span style={{ fontSize: '20px', display: 'block', color: 'black' }}>MySQL</span>
       </Col>
       <Col xs={4} md={2} title="React.js" className="tech-icons hover-icon">
         <DiReact />
         <span style={{ fontSize: '20px', display: 'block' }}>React js</span>
       </Col>
-      <Col xs={4} md={2} title="Html5/css" className="tech-icons hover-icon" style={{ color : '#43b02a'}}>
-        <SiSelenium  /><span style={{ fontSize: '20px', display: 'block',color : '#43b02a' }}>Selenium</span>
+      <Col xs={4} md={2} title="Html5/css" className="tech-icons hover-icon" style={{ color: '#43b02a' }}>
+        <SiSelenium /><span style={{ fontSize: '20px', display: 'block', color: '#43b02a' }}>Selenium</span>
       </Col>
-      <Col xs={4} md={2} className="tech-icons hover-icon" style={{ margin: '50px', color : '#08ffff' }}>
+      <Col xs={4} md={2} className="tech-icons hover-icon" style={{ margin: '50px', color: '#08ffff' }}>
         <SiCypress />
         <span style={{ fontSize: '20px', display: 'block' }}>Cypress</span>
       </Col>

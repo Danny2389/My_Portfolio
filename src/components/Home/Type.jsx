@@ -3,31 +3,31 @@ import { motion } from "framer-motion"; // Import motion from framer-motion
 import Typewriter from "typewriter-effect";
 
 const Type = () => {
-    return (
-       <motion.div
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ duration: 1, delay: 1 }}
->
-  <div style={{ fontSize: "15px"}}>
-    <Typewriter
-      options={{
-        strings: [
-          "1 Year + Experience",
-          "Automation Testing",
-          "Data Scientist",
-          "Passionate Machine Learner",
-          "Committed Open Source Contributor"
-        ],
-        autoStart: true,
-        loop: true,
-        deleteSpeed: 50,
-      }}
-    />
-  </div>
-</motion.div>
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1, delay: 1 }}
+    >
+      <div style={{ fontSize: "15px" }}>
+        <Typewriter
+          options={{
+            strings: [
+              "1 Year + Experience",
+              "Automation Testing",
+              "Data Scientist",
+              "Passionate Machine Learner",
+              "Committed Open Source Contributor"
+            ],
+            autoStart: true,
+            loop: true,
+            deleteSpeed: 50,
+          }}
+        />
+      </div>
+    </motion.div>
 
-    )
+  )
 }
 
 export default Type;

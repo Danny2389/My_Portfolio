@@ -1,0 +1,10 @@
+﻿
+> portfolio@4.7.9 build
+> react-scripts build
+
+Creating an optimized production build...
+Failed to compile.
+
+Module not found: Error: Can't resolve '@emailjs/browser' in 'E:\lResume\My_Portfolio\src\components\Contact'
+
+

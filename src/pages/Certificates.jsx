@@ -12,17 +12,17 @@ const Certificate = () => {
       <h1 className="section-heading mb-5">
         🎓 My <strong className="yellow">Certificates</strong>
       </h1>
-            <motion.p
-              className="section-heading"
-              style={{ fontSize: "18px",color:'#e0e0e05e' }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-            >
-              Hover your mouse over the text,<br></br>
-              and you should be able to access the certificate.
-            </motion.p>
-        <Certificates />
+      <motion.p
+        className="section-heading"
+        style={{ fontSize: "18px", color: '#e0e0e05e' }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3 }}
+      >
+        Hover your mouse over the text,<br></br>
+        and you should be able to access the certificate.
+      </motion.p>
+      <Certificates />
     </Container>
   )
 }

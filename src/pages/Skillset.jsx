@@ -12,9 +12,9 @@ const Skillset = () => {
     <Container fluid className="about-section">
       <Particle />
       <Container>
-      <h1 className="section-heading">
-    🧠 Professional | <strong className="yellow">Skillset</strong>
-</h1>
+        <h1 className="section-heading">
+          🧠 Professional | <strong className="yellow">Skillset</strong>
+        </h1>
 
         <Techstack />
 
@@ -22,7 +22,7 @@ const Skillset = () => {
           <strong className="yellow">Tools</strong> I use
         </h1>
         <Toolstack />
-              </Container>
+      </Container>
     </Container>
   )
 }

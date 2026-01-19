@@ -11,13 +11,12 @@ import Project from "./pages/Projects";
 import Resume from "./pages/Resume";
 import Certificates from "./pages/Certificates";
 import Contact from "./pages/Contact";
-import AdminLogin from "./pages/AdminLogin";
-import AdminDashboard from "./pages/AdminDashboard";
+
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import CopyPopup from "./components/copypop/CopyPopup";
-import { useVisitTracker } from "./hooks/useVisitTracker";
+
 
 import "./App.css";
 import "./style.css";
@@ -34,11 +33,7 @@ const Preloader = ({ load }) => {
   );
 };
 
-// VisitTracker Component
-const VisitTracker = () => {
-  useVisitTracker(); // Hook is always called at top level
-  return null;
-};
+
 
 // App Layout for normal pages
 const AppLayout = ({ load }) => (
@@ -47,7 +42,7 @@ const AppLayout = ({ load }) => (
     <Navbar />
     <CopyPopup />
     <ScrollToTop />
-    <VisitTracker />
+
     <div className="App" id={load ? "no-scroll" : "scroll"}>
       <Outlet />
     </div>
@@ -55,12 +50,7 @@ const AppLayout = ({ load }) => (
   </>
 );
 
-// Admin Layout (no analytics tracking)
-const AdminLayout = () => (
-  <>
-    <Outlet />
-  </>
-);
+
 
 function AppRouter() {
   // const [load, setLoad] = useState(true);
@@ -85,14 +75,7 @@ function AppRouter() {
           { path: "*", element: <Navigate to="/" replace /> },
         ],
       },
-      {
-        path: "/admin-:adminId",
-        element: <AdminLayout />,
-        children: [
-          { index: true, element: <AdminLogin /> },
-          { path: "dashboard", element: <AdminDashboard /> },
-        ],
-      },
+
     ],
     {
       future: {

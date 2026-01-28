@@ -9,11 +9,11 @@ import cert4 from "../../assets/certificates/SytiqHub.pdf";
 import cert5 from "../../assets/certificates/NASSCOM.pdf";
 import cert6 from "../../assets/certificates/Testing.pdf";
 import "./pdf.css";
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 const certificates = [
   { file: cert5, title: "NASSCOM_Certification", pages: 2 },
-  { file: cert1,  title:  "DataMites_CDS", pages: 1 },
+  { file: cert1, title: "DataMites_CDS", pages: 1 },
   { file: cert2, title: "IABAC_Data_Science_Foundation", pages: 1 },
   { file: cert3, title: "Rubixe Internship", pages: 1 },
   { file: cert4, title: "SytiqHub Internship", pages: 1 },
@@ -80,7 +80,7 @@ const Pdfs = () => {
                       fontWeight: "bold",
                       fontSize: "13px",
                       borderRadius: "20px",
-                      backdropFilter: "blur(6px)", 
+                      backdropFilter: "blur(6px)",
                       padding: "5px 8px",
                       boxShadow: "rgb(96 0 206 / 50%) -6px 3px 10px",
                       transition: "all 0.3s ease-in-out",
@@ -114,28 +114,28 @@ const Pdfs = () => {
 
       {/* Modal Viewer */}
       <Modal
-  show={showModal}
-  onHide={() => setShowModal(false)}
-  centered
-  backdropClassName="custom-backdrop"
-  contentClassName="glass-modal"
->
-  {selectedCert && (
-    <div className="w-full flex justify-center px-4 sm:px-9">
-      <Document file={selectedCert.file}>
-        {Array.from(new Array(selectedCert.pages), (_, pageIndex) => (
-          <Page
-          
-            className="transparent-pdf-page"
-            key={`page_${pageIndex + 1}`}
-            pageNumber={pageIndex + 1}
-            width={Math.min(window.innerWidth * 0.85, 600)}
-          />
-        ))}
-      </Document>
-    </div>
-  )}
-</Modal>
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        centered
+        backdropClassName="custom-backdrop"
+        contentClassName="glass-modal"
+      >
+        {selectedCert && (
+          <div className="w-full flex justify-center px-4 sm:px-9">
+            <Document file={selectedCert.file}>
+              {Array.from(new Array(selectedCert.pages), (_, pageIndex) => (
+                <Page
+
+                  className="transparent-pdf-page"
+                  key={`page_${pageIndex + 1}`}
+                  pageNumber={pageIndex + 1}
+                  width={Math.min(window.innerWidth * 0.85, 600)}
+                />
+              ))}
+            </Document>
+          </div>
+        )}
+      </Modal>
     </Container>
   );
 };

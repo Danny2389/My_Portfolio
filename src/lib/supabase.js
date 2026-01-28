@@ -7,6 +7,12 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 // Contact form submission
 export const submitContactForm = async (formData, ipAddress) => {
+  // Skip if Supabase is not configured
+  if (supabaseUrl.includes('placeholder') || supabaseAnonKey.includes('placeholder')) {
+    console.warn('Supabase not configured - skipping form backup');
+    return { success: true };
+  }
+
   try {
     const { data, error } = await supabase
       .from('contact_submissions')

@@ -9,7 +9,9 @@ export function useVisitTracker() {
     try {
       trackPageVisit(location.pathname);
     } catch (err) {
-      console.warn("Visit tracking failed:", err);
+      if (err !== "Supabase not configured") {
+        console.warn("Visit tracking failed:", err);
+      }
     }
   }, [location.pathname]);
 }

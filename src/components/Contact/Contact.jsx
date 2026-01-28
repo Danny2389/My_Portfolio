@@ -41,10 +41,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_msrxzy7", // ✅ YOUR SERVICE ID
-        "template_mrgixqm", // ✅ YOUR TEMPLATE ID
+        "service_0doys5a",
+        "template_mrgixqm",
         form.current,
-        "4JTtnu4FId60vAbq1" // ✅ YOUR PUBLIC KEY
+        "sGOyqRmDrEB5wOL4z"
       )
       .then(
         async (result) => {
@@ -64,7 +64,7 @@ const Contact = () => {
           });
         },
         (error) => {
-          console.error("FAILED...", error.text);
+          console.error("FAILED...", error);
           setFormStatus({ error: true, success: false });
         }
       );

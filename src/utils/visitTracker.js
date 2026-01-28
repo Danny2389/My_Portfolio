@@ -17,7 +17,7 @@ export const trackPageVisit = async (pageUrl, username = '') => {
   try {
     const ipAddress = await getUserIP();
     const userAgent = navigator.userAgent;
-    
+
     const visitData = {
       ip_address: ipAddress,
       user_agent: userAgent,
@@ -26,7 +26,7 @@ export const trackPageVisit = async (pageUrl, username = '') => {
     };
 
     const result = await trackVisit(visitData);
-    if (!result.success) {
+    if (!result.success && result.error !== 'Supabase not configured') {
       console.warn('Visit tracking failed:', result.error);
     }
   } catch (error) {

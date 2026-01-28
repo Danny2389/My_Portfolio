@@ -1,10 +1,12 @@
 import React, { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
 import { Container, Row, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import contact from "../../assets/contact.png";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion"; // Importing framer-motion
+import emailjs from "@emailjs/browser";
+import { submitContactForm } from "../../lib/supabase";
+import { getUserIP } from "../../utils/visitTracker";
 import "./Contact.css";
 
 const Contact = () => {
@@ -20,7 +22,6 @@ const Contact = () => {
   const [formStatus, setFormStatus] = useState({
     error: false,
     success: false,
-    submitting: false,
   });
 
   const handleChange = (e) => {
@@ -30,37 +31,41 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    setFormStatus({ error: false, success: false, submitting: true });
 
-    const { from_name, reply_to, message, company_name } = formData;
+    const { from_name, reply_to, message, company_name, contact_info } = formData;
 
-    if (!from_name || !reply_to || !message || !company_name) {
-      setFormStatus({ error: true, success: false, submitting: false });
+    if (!from_name || !reply_to || !message || !company_name || !contact_info) {
+      setFormStatus({ error: true, success: false });
       return;
     }
 
     emailjs
       .sendForm(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        "service_msrxzy7", // ✅ YOUR SERVICE ID
+        "template_mrgixqm", // ✅ YOUR TEMPLATE ID
         form.current,
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+        "4JTtnu4FId60vAbq1" // ✅ YOUR PUBLIC KEY
       )
       .then(
-        (result) => {
+        async (result) => {
           console.log("SUCCESS:", result.text);
-          setFormStatus({ success: true, error: false, submitting: false });
+          setFormStatus({ success: true, error: false });
+
+          // Save to Supabase
+          const ip = await getUserIP();
+          await submitContactForm(formData, ip);
+
           setFormData({
-            company_name: "",
             from_name: "",
             reply_to: "",
             contact_info: "",
             message: "",
+            company_name: "",
           });
         },
         (error) => {
           console.error("FAILED...", error.text);
-          setFormStatus({ error: true, success: false, submitting: false });
+          setFormStatus({ error: true, success: false });
         }
       );
   };
@@ -165,15 +170,24 @@ const Contact = () => {
                 ✅ Message sent successfully! I will get back to you soon.
               </motion.span>
             )}
+            {formStatus.loading && (
+              <motion.span
+                className="done"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1, duration: 0.3 }}
+              >
+                📤 Sending message...
+              </motion.span>
+            )}
             <motion.span
               className="not-done"
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.1, duration: 0.5 }}
             >
-              <Button type="submit" className="button" disabled={formStatus.submitting}>
-                {formStatus.submitting ? "Sending..." : "Send"}
-              </Button></motion.span>
+              <Button type="submit" className="button"
+              > Send </Button></motion.span>
           </form>
         </Col>
       </Row>

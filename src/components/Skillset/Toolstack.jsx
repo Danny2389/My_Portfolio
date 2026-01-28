@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
+import { VscVscode } from "react-icons/vsc";
 import {
-  SiVisualstudiocode,
   SiPycharm,
   SiNetlify
 } from "react-icons/si";
@@ -11,7 +11,7 @@ const Toolstack = () => {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       <Col xs={4} md={2} title="VS_Code" className="tech-icons">
-        <SiVisualstudiocode /><span style={{ fontSize: '20px', display: 'block' }}>VS Code</span>
+        <VscVscode /><span style={{ fontSize: '20px', display: 'block' }}>VS Code</span>
       </Col>
       <Col xs={4} md={2} title="Pycharm" className="tech-icons">
         <SiPycharm /><span style={{ fontSize: '20px', display: 'block' }}>Pycharm</span>
